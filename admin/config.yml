@@ -15,6 +15,18 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'players'
+    label: 'Players'
+    folder: '_players/'
+    create: true
+    editor:
+      preview: false
+      fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'player' }
+      - { label: 'Chess.com', name: 'chesscom', widget: 'string' }
+      - { label: 'LIChess', name: 'lichess', widget: 'string' }
+      - { label: 'ECF Number', name: 'ecf', widget: 'string' }
+      - { label: 'Summary', name: 'body', widget: 'markdown' }
   - name: 'pages'
     label: 'Pages'
     editor:

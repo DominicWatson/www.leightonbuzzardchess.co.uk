@@ -55,6 +55,13 @@ collections:
     feature_text: |
       Welcome to my blog
     feature_image: "https://picsum.photos/2560/600?image=866"
+  players:
+    title: Players
+    output: true
+    description: "Players, past and present"
+    feature_text: |
+      What is this
+    feature_image: "https://picsum.photos/1011/600?image=866"
 
 # Collection settings
 defaults:

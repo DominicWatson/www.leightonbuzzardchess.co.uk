@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <article class="article  article--post  content  typeset">
+		{% if page.chesscom %}
+			<a href="https://www.chess.com/member/{{ page.chesscom }}">Chess.com</a><br>
+		{% endif %}
+		{{ content }}
+  </article>
+
+  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
+
+</main>
+
+{% include site-footer.html %}
