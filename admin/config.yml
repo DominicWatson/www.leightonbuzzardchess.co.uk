@@ -21,7 +21,7 @@ collections:
     create: true
     editor:
       preview: false
-      fields:
+    fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'player' }
       - { label: 'Chess.com', name: 'chesscom', widget: 'string' }
       - { label: 'LIChess', name: 'lichess', widget: 'string' }
