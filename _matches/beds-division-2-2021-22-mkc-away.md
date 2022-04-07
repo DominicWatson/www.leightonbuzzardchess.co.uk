@@ -6,7 +6,7 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: milton-keynes-c
 homeaway: Away
-result: TBC
+result: Win
 score: ""
 scoreavailable: 5
 ---
