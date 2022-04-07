@@ -12,7 +12,7 @@ collections:
     fields:
       - { label: 'Team name', name: 'title', widget: 'string' }
       - { label: 'LB Team?', name: 'lbteam', widget: 'boolean', hint: 'Leave unticked for teams in other clubs.', default: true }
-      - { label: 'Team captain', name: 'captain', widget: 'relation', collection: 'players', required: false, valueField: 'slug', searchFields: 'title' }
+      - { label: 'Team captain', name: 'captain', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ] }
       - { label: 'About', name: 'body', widget: 'markdown', required: false }
 
   - name: 'players'
@@ -24,7 +24,7 @@ collections:
     fields:
       - { label: 'Player name', name: 'title', widget: 'string' }
       - { label: 'LB Player', name: 'lbplayer', widget: 'boolean', hint: 'Leave unticked for players in other clubs', default: true }
-      - { label: 'Current team', name: 'current_team', widget: 'relation', collection: 'teams', required: false, valueField: 'slug', searchFields: 'title' }
+      - { label: 'Current team', name: 'current_team', widget: 'relation', collection: 'teams', required: false, value_field: '{{slug}}', search_fields: [ 'title' ] }
       - { label: 'ECF Number', name: 'ecf', widget: 'string', hint: 'e.g. "275762L"', required: false }
       - { label: 'Chess.com user', name: 'chesscom', widget: 'string', hint: 'e.g. "domwatson"', required: false }
       - { label: 'LIChess user', name: 'lichess', widget: 'string', hint: 'e.g. "DomWatson"', required: false }
@@ -57,7 +57,7 @@ collections:
       preview: false
     fields:
       - { label: 'Event name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
-      - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', valueField: 'slug', searchFields: 'title' }
+      - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', value_field: '{{slug}}', search_fields: [ 'title' ] }
       - { label: 'Event report', name: 'body', widget: 'markdown', required: false }
 
   - name: 'matches'
@@ -70,9 +70,9 @@ collections:
       preview: false
     fields:
       - { label: 'Date', name: 'matchdate', widget: 'datetime', time_format: false }
-      - { label: 'League', name: 'league', widget: 'relation', collection: 'leagues', valueField: 'slug', searchFields: 'title' }
-      - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', valueField: 'slug', searchFields: 'title' }
-      - { label: 'Opponent', name: 'opponent', widget: 'relation', collection: 'teams', valueField: 'slug', searchFields: 'title' }
+      - { label: 'League', name: 'league', widget: 'relation', collection: 'leagues', value_field: '{{slug}}', search_fields: [ 'title' ] }
+      - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', value_field: '{{slug}}', search_fields: [ 'title' ] }
+      - { label: 'Opponent', name: 'opponent', widget: 'relation', collection: 'teams', value_field: '{{slug}}', search_fields: [ 'title' ] }
       - { label: 'Home or away', name: 'homeaway', widget: 'select', options: [ "Home", "Away" ] }
       - { label: 'Result', name: 'result', widget: 'select', options: [ "TBC", Win", "Draw", "Loss", "Abandoned" ] }
       - { label: 'Points scored', name: 'score', widget: 'number', min: 1, value_type: "int", required: false }
@@ -89,10 +89,10 @@ collections:
       preview: false
     fields:
       - { label: 'Date', name: 'gamedate', widget: 'datetime', time_format: false }
-      - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false, valueField: 'slug', searchFields: 'opponent' }
-      - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false, valueField: 'slug', searchFields: 'title' }
-      - { label: 'White', name: 'white', widget: 'relation', collection: 'players', valueField: 'slug', searchFields: 'title' }
-      - { label: 'Black', name: 'black', widget: 'relation', collection: 'players', valueField: 'slug', searchFields: 'title' }
+      - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false, value_field: '{{slug}}', search_fields: [ 'opponent' ] }
+      - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false, value_field: '{{slug}}', search_fields: [ 'title' ] }
+      - { label: 'White', name: 'white', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ] }
+      - { label: 'Black', name: 'black', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ] }
       - { label: 'Result', name: 'result', widget: 'select', options: [ '1-0', '½-½', '0-1' ] }
       - { label: 'PGN', name: 'pgn', widget: 'text' }
       - { label: 'Game Report', name: 'body', widget: 'markdown', required: false }
