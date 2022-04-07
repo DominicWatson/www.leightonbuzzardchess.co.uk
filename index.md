@@ -1,8 +1,6 @@
 ---
-title: Welcome to Leighton Buzzard Chess Club
+title: Leighton Buzzard Chess Club
 feature_image: /assets/uploads/wallhaven-93962.jpg
-feature_text: |
-  ## Hello world
+feature_text: Bedfordshire League Champions!
 ---
-
-There isn't much going on here yet, but watch this space
+Welcome to the home of Leighton Buzzard Chess Club. TODO: content!
