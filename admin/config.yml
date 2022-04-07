@@ -13,6 +13,7 @@ collections:
       - { label: 'Team name', name: 'title', widget: 'string' }
       - { label: 'LB Team?', name: 'lbteam', widget: 'boolean', hint: 'Leave unticked for teams in other clubs.', default: true }
       - { label: 'Team captain', name: 'captain', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'Players', name: 'players', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ], multiple: true  }
       - { label: 'About', name: 'body', widget: 'markdown', required: false }
 
   - name: 'players'
