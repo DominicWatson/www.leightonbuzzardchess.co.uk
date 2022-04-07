@@ -27,6 +27,7 @@ title: 'My website'
 description: 'This is my new website'
 permalink: pretty
 logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+currentseason: 2021-22
 
 # Pagination
 paginate: 5
@@ -38,8 +39,8 @@ navigation_header:
   url: /
 - title: About
   url: /about/
-- title: Players
-  url: /players/
+- title: Our teams
+  url: /teams/
 
 # Footer nav
 navigation_footer:
@@ -66,9 +67,13 @@ collections:
 
 # Collection settings
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+  - scope:
+      path: ""
+      type: "teams"
+    values:
+      layout: team # Set the default layout for pages
