@@ -41,7 +41,7 @@ collections:
 
   - name: 'leagues'
     label: 'Leagues'
-    folder: '_leasons/'
+    folder: '_leagues/'
     create: true
     editor:
       preview: false
