@@ -84,3 +84,8 @@ defaults:
       type: "games"
     values:
       layout: game # Set the default layout for pages
+  - scope:
+      path: ""
+      type: "matches"
+    values:
+      layout: match # Set the default layout for pages

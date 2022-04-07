@@ -7,7 +7,23 @@ layout: default
 <main class="main  container">
 
   <article class="article  article--post  content  typeset">
+    {% assign white = site.players | where:"slug",page.white %}
+    {% assign black = site.players | where:"slug",page.black %}
+    <h1>{{ white[0].title }} vs {{ black[0].title }}</h1>
+
   	{{ content }}
+
+    {% if page.pgn %}
+    <div class="chess-match-pgn">
+      <div id="board" style="width: 400px"></div>
+      <script type="text/template" id="pgn">{{page.pgn}}</script>
+      <script src="https://mliebelt.github.io/PgnViewerJS/lib/dist.js"></script>
+      <script>
+        var pgn = document.getElementById("pgn").innerHTML;
+        var board = PGNV.pgnView('board', {pgn: pgn});
+      </script>
+    </div>
+    {% endif %}
   </article>
 
   {% if page.aside == true %}{% include site-aside.html %}{% endif %}
