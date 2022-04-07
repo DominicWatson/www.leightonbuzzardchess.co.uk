@@ -3,33 +3,25 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:
-  - name: 'teams'
-    label: 'Teams'
-    folder: '_teams/'
-    create: true
+  - name: 'pages'
+    label: 'Pages'
     editor:
       preview: false
-    fields:
-      - { label: 'Team name', name: 'title', widget: 'string' }
-      - { label: 'LB Team?', name: 'lbteam', widget: 'boolean', hint: 'Leave unticked for teams in other clubs.', default: true }
-      - { label: 'Team captain', name: 'captain', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
-      - { label: 'Players', name: 'players', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ], multiple: true  }
-      - { label: 'About', name: 'body', widget: 'markdown', required: false }
-
-  - name: 'players'
-    label: 'Players'
-    folder: '_players/'
-    create: true
-    editor:
-      preview: false
-    fields:
-      - { label: 'Player name', name: 'title', widget: 'string' }
-      - { label: 'LB Player', name: 'lbplayer', widget: 'boolean', hint: 'Leave unticked for players in other clubs', default: true }
-      - { label: 'Current team', name: 'current_team', widget: 'relation', collection: 'teams', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
-      - { label: 'ECF Number', name: 'ecf', widget: 'string', hint: 'e.g. "275762L"', required: false }
-      - { label: 'Chess.com user', name: 'chesscom', widget: 'string', hint: 'e.g. "domwatson"', required: false }
-      - { label: 'LIChess user', name: 'lichess', widget: 'string', hint: 'e.g. "DomWatson"', required: false }
-      - { label: 'Bio/Description', name: 'body', widget: 'markdown', required: false }
+    files:
+      - label: 'Homepage'
+        name: 'index'
+        file: 'index.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'About Page'
+        name: 'about'
+        file: 'about.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'seasons'
     label: 'Seasons'
@@ -60,6 +52,34 @@ collections:
       - { label: 'Event name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
       - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Event report', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'teams'
+    label: 'Teams'
+    folder: '_teams/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Team name', name: 'title', widget: 'string' }
+      - { label: 'LB Team?', name: 'lbteam', widget: 'boolean', hint: 'Leave unticked for teams in other clubs.', default: true }
+      - { label: 'Team captain', name: 'captain', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'Players', name: 'players', widget: 'relation', collection: 'players', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ], multiple: true  }
+      - { label: 'About', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'players'
+    label: 'Players'
+    folder: '_players/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Player name', name: 'title', widget: 'string' }
+      - { label: 'LB Player', name: 'lbplayer', widget: 'boolean', hint: 'Leave unticked for players in other clubs', default: true }
+      - { label: 'Current team', name: 'current_team', widget: 'relation', collection: 'teams', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'ECF Number', name: 'ecf', widget: 'string', hint: 'e.g. "275762L"', required: false }
+      - { label: 'Chess.com user', name: 'chesscom', widget: 'string', hint: 'e.g. "domwatson"', required: false }
+      - { label: 'LIChess user', name: 'lichess', widget: 'string', hint: 'e.g. "DomWatson"', required: false }
+      - { label: 'Bio/Description', name: 'body', widget: 'markdown', required: false }
 
   - name: 'matches'
     label: 'Matches'
@@ -97,23 +117,3 @@ collections:
       - { label: 'Result', name: 'result', widget: 'select', options: [ '1-0', '½-½', '0-1' ] }
       - { label: 'PGN', name: 'pgn', widget: 'text' }
       - { label: 'Game Report', name: 'body', widget: 'markdown', required: false }
-
-  - name: 'pages'
-    label: 'Pages'
-    editor:
-      preview: false
-    files:
-      - label: 'Homepage'
-        name: 'index'
-        file: 'index.md'
-        fields:
-          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'About Page'
-        name: 'about'
-        file: 'about.md'
-        fields:
-          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
