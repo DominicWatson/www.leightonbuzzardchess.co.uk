@@ -109,7 +109,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string', hint: 'e.g. 2022-04-05: Lee Davies vs Dominic Watson' }
       - { label: 'Date', name: 'gamedate', widget: 'datetime', time_format: false }
-      - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false, value_field: '{{slug}}', search_fields: [ 'opponent' ], display_fields: [ 'match_date', 'league', 'opponent' ]  }
+      - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'White', name: 'white', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Black', name: 'black', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
