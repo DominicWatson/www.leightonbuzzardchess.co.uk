@@ -26,7 +26,7 @@ baseurl: ''
 title: 'Leighton Buzzard Chess Club'
 description: 'Welcome to Leighton Buzzard Chess Club Website'
 permalink: pretty
-logo: "/assets/uploads/chess.png"
+logo: "/assets/android-chrome-192x192.png"
 currentseason: 2021-22
 
 # Pagination
