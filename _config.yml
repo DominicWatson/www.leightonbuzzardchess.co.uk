@@ -38,8 +38,8 @@ navigation_header:
   url: /
 - title: About
   url: /about/
-- title: Blog
-  url: /blog/
+- title: Players
+  url: /players/
 
 # Footer nav
 navigation_footer:
@@ -48,29 +48,24 @@ navigation_footer:
 
 # Collections
 collections:
-  posts:
-    title: Posts
+  seasons:
+    title: Seasons
     output: true
-    description: "My thoughts and ideas"
-    feature_text: |
-      Welcome to my blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+  leagues:
+    title: Leagues
+    output: true
+  matches:
+    title: Matches
+    output: true
+  teams:
+    title: Teams
+    output: true
   players:
     title: Players
     output: true
-    description: "Players, past and present"
-    feature_text: |
-      What is this
-    feature_image: "https://picsum.photos/1011/600?image=866"
 
 # Collection settings
 defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post # Set the default layout for posts
   -
     scope:
       path: ""

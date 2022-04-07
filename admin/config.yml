@@ -3,18 +3,18 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: '_posts/'
+  - name: 'teams'
+    label: 'Teams'
+    folder: '_teams/'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Team name', name: 'title', widget: 'string' }
+      - { label: 'LB Team?', name: 'lbteam', widget: 'boolean', hint: 'Leave unticked for teams in other clubs.', default: true }
+      - { label: 'Team captain', name: 'captain', widget: 'relation', collection: 'players', required: false }
+      - { label: 'About', name: 'body', widget: 'markdown', required: false }
+
   - name: 'players'
     label: 'Players'
     folder: '_players/'
@@ -22,11 +22,81 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'player' }
-      - { label: 'Chess.com', name: 'chesscom', widget: 'string' }
-      - { label: 'LIChess', name: 'lichess', widget: 'string' }
-      - { label: 'ECF Number', name: 'ecf', widget: 'string' }
-      - { label: 'Summary', name: 'body', widget: 'markdown' }
+      - { label: 'Player name', name: 'title', widget: 'string' }
+      - { label: 'LB Player', name: 'lbplayer', widget: 'boolean', hint: 'Leave unticked for players in other clubs', default: true }
+      - { label: 'Current team', name: 'current_team', widget: 'relation', collection: 'teams', required: false }
+      - { label: 'ECF Number', name: 'ecf', widget: 'string', hint: 'e.g. "275762L"', required: false }
+      - { label: 'Chess.com user', name: 'chesscom', widget: 'string', hint: 'e.g. "domwatson"', required: false }
+      - { label: 'LIChess user', name: 'lichess', widget: 'string', hint: 'e.g. "DomWatson"', required: false }
+      - { label: 'Bio/Description', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'seasons'
+    label: 'Seasons'
+    folder: '_seasons/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Season name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
+
+  - name: 'leagues'
+    label: 'Leagues'
+    folder: '_leasons/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'League name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
+      - { label: 'Description', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'events'
+    label: 'Events'
+    folder: '_events/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Event name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
+      - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons' }
+      - { label: 'Event report', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'matches'
+    label: 'Matches'
+    folder: '_matches/'
+    identifier_field: 'matchdate'
+    slug: '{{matchdate}}-{{league}}-{{season}}-{{opponenet}}'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Date', name: 'matchdate', widget: 'datetime', time_format: false }
+      - { label: 'League', name: 'league', widget: 'relation', collection: 'leagues' }
+      - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons' }
+      - { label: 'Opponent', name: 'opponent', widget: 'relation', collection: 'teams' }
+      - { label: 'Home or away', name: 'homeaway', widget: 'select', options: [ "Home", "Away" ] }
+      - { label: 'Result', name: 'result', widget: 'select', options: [ "TBC", Win", "Draw", "Loss", "Abandoned" ] }
+      - { label: 'Points scored', name: 'score', widget: 'number', min: 1, value_type: "int", required: false }
+      - { label: 'Points available', name: 'scoreavailable', widget: 'number', min: 1, value_type: "int", required: false }
+      - { label: 'Match Report', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'games'
+    label: 'Games'
+    folder: '_games/'
+    create: true
+    identifier_field: 'game'
+    slug: '{{gamedate}}-{{black}}-{{white}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Date', name: 'gamedate', widget: 'datetime', time_format: false }
+      - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false }
+      - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false }
+      - { label: 'White', name: 'white', widget: 'relation', collection: 'players' }
+      - { label: 'Black', name: 'black', widget: 'relation', collection: 'players' }
+      - { label: 'Result', name: 'result', widget: 'select', options: [ '1-0', '½-½', '0-1' ] }
+      - { label: 'PGN', name: 'pgn', widget: 'text' }
+      - { label: 'Game Report', name: 'body', widget: 'markdown', required: false }
+
   - name: 'pages'
     label: 'Pages'
     editor:
