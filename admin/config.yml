@@ -12,15 +12,17 @@ collections:
         name: 'index'
         file: 'index.md'
         fields:
-          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false }
+          - { label: 'Teaser text', name: 'feature_text', widget: 'text' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'About Page'
         name: 'about'
         file: 'about.md'
         fields:
-          - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
-          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false }
+          - { label: 'Teaser text', name: 'feature_text', widget: 'text' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'seasons'
