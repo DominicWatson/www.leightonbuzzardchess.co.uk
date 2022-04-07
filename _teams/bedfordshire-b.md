@@ -1,4 +1,4 @@
 ---
 title: Bedfordshire B
-lbteam: true
+lbteam: false
 ---
