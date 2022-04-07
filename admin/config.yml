@@ -13,16 +13,16 @@ collections:
         file: 'index.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false }
-          - { label: 'Teaser text', name: 'feature_text', widget: 'text' }
+          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false, required: false }
+          - { label: 'Teaser text', name: 'feature_text', widget: 'text', required: false }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'About Page'
         name: 'about'
         file: 'about.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false }
-          - { label: 'Teaser text', name: 'feature_text', widget: 'text' }
+          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false, required: false }
+          - { label: 'Teaser text', name: 'feature_text', widget: 'text', required: false }
           - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'seasons'
