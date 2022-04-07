@@ -14,3 +14,5 @@ pgn: |
   34.cxb4 Rh5 35.b5 cxb5 36.Rg4 Ke7 37.Kb2 b4 38.Rxb4 Rxg5 39.Re4 Kd7 40.Kc3
   Kc6 41.Kc4 h5 42.b4 Rg4 43.b5+ Kc7 44.Rxg4 hxg4 45.Kd4 g3 46.Ke3 1-0
 ---
+
+No content here...

@@ -64,7 +64,9 @@ collections:
   players:
     title: Players
     output: true
-
+  games:
+    title: Games
+    output: true
 # Collection settings
 defaults:
   - scope:
@@ -77,3 +79,8 @@ defaults:
       type: "teams"
     values:
       layout: team # Set the default layout for pages
+  - scope:
+      path: ""
+      type: "games"
+    values:
+      layout: game # Set the default layout for pages

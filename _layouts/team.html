@@ -40,18 +40,24 @@ layout: default
         {% if matches.size > 0 %}
         <table class="table">
           <thead>
-            <th>Opponent</th>
+            <th>Match</th>
             <th>Date</th>
-            <th>Home/Away</th>
             <th>Result</th>
           </thead>
           <tbody>
             {% for match in matches %}
               {% assign opponent = site.teams | where:"slug",match.opponent %}
               <tr>
-                <td>{{ opponent[0].title }}</td>
+                <td>
+                  <a href="{{ site.baseurl }}{{ match.url }}">
+                  {% if match.homeaway == "home" %}
+                    {{ page.title }} vs {{ opponent[0].title }}
+                  {% else %}
+                    {{ opponent[0].title }} vs {{ page.title }}
+                  {% endif %}
+                  </a>
+                </td>
                 <td>{{ match.matchdate | date_to_string }}</td>
-                <td>{{ match.homeaway }}</td>
                 <td>{{ match.result }} ({{ match.score }}/{{ match.scoreavailable }})</td>
               </tr>
             {% endfor %}

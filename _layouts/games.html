@@ -6,24 +6,22 @@ layout: default
 
 <main class="main  container">
 
-  <article class="article  article--post  content  typeset">
-  	<h1>{{ page.title }}</h1>
-		{% if page.chesscom %}
-			<a href="https://www.chess.com/member/{{ page.chesscom }}">Chess.com</a><br>
-		{% endif %}
+  <div class="content">
 
-		{{ content }}
+    <article class="article  article--team  typeset">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </article>
 
-		{% assign games = site.games | where_exp: "game", "game.white == page.slug or game.black == page.slug" | sort: "gamedate desc" %}
-		{% if games.size > 0 %}
-		<h2>Game history</h2>
-		<table class="table">
+  <section class="section  typeset">
+    <table class="table">
       <thead>
         <th>Game</th>
         <th>Date</th>
         <th>Result</th>
       </thead>
       <tbody>
+        {% assign games = site.games | sort: "gamedate desc" %}
         {% for game in games %}
           {% assign white = site.players | where:"slug",game.white %}
           {% assign black = site.players | where:"slug",game.black %}
@@ -39,11 +37,9 @@ layout: default
         {% endfor %}
       </tbody>
     </table>
-	  {% endif %}
+  </section>
 
-  </article>
-
-  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
+  </div>
 
 </main>
 
