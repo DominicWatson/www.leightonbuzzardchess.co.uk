@@ -92,6 +92,7 @@ collections:
       - { label: 'Date', name: 'matchdate', widget: 'datetime', time_format: false }
       - { label: 'League', name: 'league', widget: 'relation', collection: 'leagues', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'Home team', name: 'hometeam', widget: 'relation', collection: 'teams', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Opponent', name: 'opponent', widget: 'relation', collection: 'teams', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Home or away', name: 'homeaway', widget: 'select', options: [ "Home", "Away" ] }
       - { label: 'Result', name: 'result', widget: 'select', options: [ "TBC", "Win", "Draw", "Loss", "Abandoned" ] }
