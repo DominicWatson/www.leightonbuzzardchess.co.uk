@@ -1,5 +1,5 @@
 ---
-title: Leighton Buzzard A
+title: Leighton Buzzard B
 lbteam: true
 ---
 
