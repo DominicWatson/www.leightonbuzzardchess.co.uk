@@ -84,12 +84,11 @@ collections:
   - name: 'matches'
     label: 'Matches'
     folder: '_matches/'
-    identifier_field: 'matchdate'
-    slug: '{{matchdate}}-{{league}}-{{season}}-{{opponenet}}'
     create: true
     editor:
       preview: false
     fields:
+      - { label: 'Title', name: 'title', widget: 'string', hint: 'e.g. Beds Division 2 2021/22: OU Away' }
       - { label: 'Date', name: 'matchdate', widget: 'datetime', time_format: false }
       - { label: 'League', name: 'league', widget: 'relation', collection: 'leagues', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Season', name: 'season', widget: 'relation', collection: 'seasons', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
@@ -104,11 +103,10 @@ collections:
     label: 'Games'
     folder: '_games/'
     create: true
-    identifier_field: 'game'
-    slug: '{{gamedate}}-{{black}}-{{white}}'
     editor:
       preview: false
     fields:
+      - { label: 'Title', name: 'title', widget: 'string', hint: 'e.g. 2022-04-05: Lee Davies vs Dominic Watson' }
       - { label: 'Date', name: 'gamedate', widget: 'datetime', time_format: false }
       - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false, value_field: '{{slug}}', search_fields: [ 'opponent' ], display_fields: [ 'match_date', 'league', 'opponent' ]  }
       - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
