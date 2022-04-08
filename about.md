@@ -1,10 +1,8 @@
 ---
 title: About the Club
 feature_image: ""
-feature_text: Founded in 1983, Leighton Buzzard Chess club has a proud history
-  and continues to play competitively in the Bedfordshire League. We currently
-  field two teams who regularly compete with great success in the Bedfordshire
-  League.
+feature_text: ""
+aside: true
 ---
 Founded in 1983, Leighton Buzzard Chess club has a proud history and continues to play competitively in the Bedfordshire League. We currently field two teams who regularly compete.
 

@@ -1,0 +1,27 @@
+// TODO
+.nav--header {
+  a {
+    transition: text-decoration .1s;
+
+    &:hover, &:active, &:focus {
+      border-bottom: 2px dotted $headingColour;
+    }
+  }
+
+  .item--current a {
+    border-bottom: 2px solid $headingColour;
+  }
+}
+
+.footer {
+  small {
+    color: $backgroundColour;
+  }
+  a {
+    color: $backgroundColour;
+
+    &:hover, &:active, &:focus {
+      border-bottom: 1px dotted $backgroundColour;
+    }
+  }
+}
