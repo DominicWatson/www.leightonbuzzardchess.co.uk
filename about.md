@@ -1,6 +1,6 @@
 ---
 title: About the Club
-feature_image: /assets/uploads/wallhaven-93962.jpg
+feature_image: ""
 feature_text: Founded in 1983, Leighton Buzzard Chess club has a proud history
   and continues to play competitively in the Bedfordshire League. We currently
   field two teams who regularly compete.
