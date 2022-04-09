@@ -1,3 +1,7 @@
+// Theme colors
+$leightonyellow: #f9dc40 !default;
+$leightonred: #e10101 !default;
+
 // Background colours
 $backgroundColour: #f2f4f5 !default;
 $headerBackgroundColour: #ffffff !default;
@@ -6,10 +10,10 @@ $featureBackgroundColour: #f9fafa !default;
 $accentColour: #05bf85 !default;
 
 // Text colours
-$headingColour: #242e2b !default;
+$headingColour: #2a2f36 !default;
 $bodyColour: #384743 !default;
 $linkColour: #242e2b !default;
-$hoverColour: #242e2b !default;
+$hoverColour: $leightonred !default;
 $focusColour: #242e2b !default;
 $captionColour: #242e2b !default;
 $white: #ffffff !default;
@@ -26,7 +30,7 @@ $bodytype: (
 $headingtype: (
   font-family: '"Gotham A","Gotham B",sans-serif',
   regular: 400,
-  bold: 700,
+  bold: 500,
   cap-height: 0.75
 ) !default;
 

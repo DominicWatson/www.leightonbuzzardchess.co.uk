@@ -1,18 +1,28 @@
-// TODO
 html {
   font-size: 14px;
+
+  .typeset {
+    h1 {
+      font-size: 50px;
+    }
+  }
 }
 .nav--header {
   a {
     transition: text-decoration .1s;
 
     &:hover, &:active, &:focus {
-      border-bottom: 2px dotted $headingColour;
+      border-bottom: 2px dotted $hoverColour;
     }
   }
 
   .item--current a {
     border-bottom: 2px solid $headingColour;
+
+    &:hover {
+      color: $hoverColour;
+      border-bottom-color: $hoverColour;
+    }
   }
 }
 
@@ -65,5 +75,18 @@ html {
 @media screen and (min-width: 40em) {
   .main {
     justify-content: left;
+  }
+
+  .aside {
+    opacity:1;
+  }
+
+  html {
+    .typeset {
+      h1 {
+        font-size: 50px;
+        margin-bottom: 2rem;
+      }
+    }
   }
 }

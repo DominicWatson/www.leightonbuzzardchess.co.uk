@@ -5,20 +5,12 @@ feature_text: ""
 aside: true
 ---
 
-Welcome to the home of Leighton Buzzard Chess Club.
+Welcome to the home of Leighton Buzzard Chess Club. We are a competitive club who belong to the [Bedfordshire CCA](https://www.ecfrating.org.uk/v2/new/list_players.php?assoc_code=CBED) and compete in the [Bedfordshire Leagues](http://www.adrianelwin.co.uk/Bedfordshire/Bedfordshire.html). We are reigning Division 1 and Division 2 champions!
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The club welcomes players of all strengths. To find out further details about the club, please contact our Club secretary, Adrian Matthews: [ady_matthews@hotmail.com](ady_matthews@hotmail.com).
 
-### A title
+## Over-the-board chess
 
-_Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum._
+The Bedfordshire Leagues are once again running and we have returned to OTB chess for the 2021/22 season. To view our current season fixtures, results, players and games, browse our [Teams pages](/teams/).
+
+We are not currently running any club nights other than scheduled matches. We would love to start club nights/ tournaments again if we can get the numbers. If you're interested do let us know!

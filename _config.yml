@@ -43,13 +43,15 @@ navigation_header:
   url: /
 - title: About
   url: /about/
+- title: Find us
+  url: /findus/
 - title: Our teams
   url: /teams/
 
 # Footer nav
 navigation_footer:
-# - title: Back to top
-#   url: "#top"
+- title: ""
+  url: "#top"
 
 # Collections
 collections:
