@@ -5,6 +5,10 @@ html {
     h1 {
       font-size: 50px;
     }
+
+    p:first-child, h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+      padding-top: 0;
+    }
   }
 }
 .nav--header {
@@ -79,6 +83,14 @@ html {
 
   .aside {
     opacity:1;
+    min-height: 300px;
+    border-left: 1px solid $borderColour;
+    padding-left: 2%;
+    margin-left: 2%;
+
+    p, dt, dd, li {
+      font-size: 80%;
+    }
   }
 
   html {

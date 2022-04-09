@@ -1,46 +1,31 @@
 ---
-layout: default
+layout: page
 ---
 
-{% include site-header.html %}
+{{ content }}
 
-<main class="main  container">
-
-  <div class="content">
-
-    <article class="article  article--team  typeset">
-        <h1>{{ page.title }}</h1>
-        {{ content }}
-    </article>
-
-  <section class="section  typeset">
-    <table class="table">
-      <thead>
-        <th>Game</th>
-        <th>Date</th>
-        <th>Result</th>
-      </thead>
-      <tbody>
-        {% assign games = site.games | sort: "gamedate desc" %}
-        {% for game in games %}
-          {% assign white = site.players | where:"slug",game.white %}
-          {% assign black = site.players | where:"slug",game.black %}
-          <tr>
-            <td>
-              <a href="{{ site.baseurl }}{{ game.url }}">
-                {{ white[0].title }} vs {{ black[0].title }}
-              </a>
-            </td>
-            <td>{{ game.gamedate | date_to_string }}</td>
-            <td>{{ game.result }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </section>
-
-  </div>
-
-</main>
-
-{% include site-footer.html %}
+<section class="section  typeset">
+  <table class="table">
+    <thead>
+      <th>Game</th>
+      <th>Date</th>
+      <th>Result</th>
+    </thead>
+    <tbody>
+      {% assign games = site.games | sort: "gamedate desc" %}
+      {% for game in games %}
+        {% assign white = site.players | where:"slug",game.white %}
+        {% assign black = site.players | where:"slug",game.black %}
+        <tr>
+          <td>
+            <a href="{{ site.baseurl }}{{ game.url }}">
+              {{ white[0].title }} vs {{ black[0].title }}
+            </a>
+          </td>
+          <td>{{ game.gamedate | date_to_string }}</td>
+          <td>{{ game.result }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>

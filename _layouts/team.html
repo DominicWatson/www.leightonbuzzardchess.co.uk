@@ -1,76 +1,63 @@
 ---
-layout: default
+layout: page
 ---
 
-{% include site-header.html %}
+{{ content }}
 
-<main class="main  container">
+{% if page.players or page.captain %}
+<h2>Players</h2>
+{% endif  %}
 
-  <article class="article  article--post  content  typeset">
-    <h1>{{ page.title }}</h1>
-    {{ content }}
+{% if page.captain %}
+  {% assign captain = site.players | where:"slug", page.captain %}
+  <p>Team Captain: <a href="{{ site.baseurl }}{{ captain[0].url }}">{{ captain[0].title }}</a></li></p>
+{% endif  %}
 
-    {% if page.players or page.captain %}
-    <h2>Players</h2>
-    {% endif  %}
+{% if page.players %}
+<ul class="list  list--players">
+  {% for playerid in page.players %}
+    {% assign player = site.players | where:"slug", playerid %}
+    <li class="item  item--post">
+      <a href="{{ site.baseurl }}{{ player[0].url }}">{{ player[0].title }}</a></li>
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
 
-    {% if page.captain %}
-      {% assign captain = site.players | where:"slug", page.captain %}
-      <p>Team Captain: <a href="{{ site.baseurl }}{{ captain[0].url }}">{{ captain[0].title }}</a></li></p>
-    {% endif  %}
+{% if page.leagues.size > 0 %}
+  <h2>Matches and Leagues</h2>
+  {% for leagueid in page.leagues %}
+    {% assign league = site.leagues | where:"slug",leagueid %}
+    <h3>{{ league[0].title }}</h3>
 
-    {% if page.players %}
-    <ul class="list  list--players">
-      {% for playerid in page.players %}
-        {% assign player = site.players | where:"slug", playerid %}
-        <li class="item  item--post">
-          <a href="{{ site.baseurl }}{{ player[0].url }}">{{ player[0].title }}</a></li>
-        </li>
-      {% endfor %}
-    </ul>
+    {% assign matches = site.matches | where:"season",site.currentseason | where:"hometeam", page.slug | where:"league", league[0].slug | sort: "matchdate" %}
+    {% if matches.size > 0 %}
+    <table class="table">
+      <thead>
+        <th>Match</th>
+        <th>Date</th>
+        <th>Result</th>
+      </thead>
+      <tbody>
+        {% for match in matches %}
+          {% assign opponent = site.teams | where:"slug",match.opponent %}
+          <tr>
+            <td>
+              <a href="{{ site.baseurl }}{{ match.url }}">
+              {% if match.homeaway == "home" %}
+                {{ page.title }} vs {{ opponent[0].title }}
+              {% else %}
+                {{ opponent[0].title }} vs {{ page.title }}
+              {% endif %}
+              </a>
+            </td>
+            <td>{{ match.matchdate | date_to_string }}</td>
+            <td>{{ match.result }} ({{ match.score }}/{{ match.scoreavailable }})</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      </table>
     {% endif %}
 
-    {% if page.leagues.size > 0 %}
-      <h2>Matches and Leagues</h2>
-      {% for leagueid in page.leagues %}
-        {% assign league = site.leagues | where:"slug",leagueid %}
-        <h3>{{ league[0].title }}</h3>
-
-        {% assign matches = site.matches | where:"season",site.currentseason | where:"hometeam", page.slug | where:"league", league[0].slug | sort: "matchdate" %}
-        {% if matches.size > 0 %}
-        <table class="table">
-          <thead>
-            <th>Match</th>
-            <th>Date</th>
-            <th>Result</th>
-          </thead>
-          <tbody>
-            {% for match in matches %}
-              {% assign opponent = site.teams | where:"slug",match.opponent %}
-              <tr>
-                <td>
-                  <a href="{{ site.baseurl }}{{ match.url }}">
-                  {% if match.homeaway == "home" %}
-                    {{ page.title }} vs {{ opponent[0].title }}
-                  {% else %}
-                    {{ opponent[0].title }} vs {{ page.title }}
-                  {% endif %}
-                  </a>
-                </td>
-                <td>{{ match.matchdate | date_to_string }}</td>
-                <td>{{ match.result }} ({{ match.score }}/{{ match.scoreavailable }})</td>
-              </tr>
-            {% endfor %}
-          </tbody>
-          </table>
-        {% endif %}
-
-      {% endfor %}
-    {% endif %}
-
-  </article>
-
-  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
-</main>
-
-{% include site-footer.html %}
+  {% endfor %}
+{% endif %}
