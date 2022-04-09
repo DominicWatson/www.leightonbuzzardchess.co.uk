@@ -6,4 +6,4 @@ current_team: leighton-buzzard-b
 ecf: 140680C
 chesscom: adymat
 ---
-Inspirational Bio here! Adrian joined the club way back in 1983, a week after the club was founded. Etc. etc.
+Adrian is a founding member of the club and is our club secretary. For information regarding the club and membership, please email Adrian at: [ady_matthews@hotmail.com](ady_matthews@hotmail.com)
