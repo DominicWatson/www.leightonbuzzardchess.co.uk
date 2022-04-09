@@ -1,5 +1,6 @@
 // Background colours
-$backgroundColour: #f3f3f3 !default;
+$backgroundColour: #f2f4f5 !default;
+$headerBackgroundColour: #ffffff !default;
 $codeBackgroundColour: #fafafa !default;
 $featureBackgroundColour: #f9fafa !default;
 $accentColour: #05bf85 !default;
@@ -15,7 +16,7 @@ $white: #ffffff !default;
 
 // Typography
 $bodytype: (
-  font-family: "Georgia, serif",
+  font-family: '"Gotham A","Gotham B",sans-serif',
   regular: 400,
   bold: 700,
   italic: italic,
@@ -23,7 +24,7 @@ $bodytype: (
 ) !default;
 
 $headingtype: (
-  font-family: '"Merriweather", serif',
+  font-family: '"Gotham A","Gotham B",sans-serif',
   regular: 400,
   bold: 700,
   cap-height: 0.75

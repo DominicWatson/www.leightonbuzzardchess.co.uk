@@ -93,3 +93,7 @@ defaults:
       type: "matches"
     values:
       layout: match # Set the default layout for pages
+
+fonts:
+  preconnect_urls:
+  font_urls:
