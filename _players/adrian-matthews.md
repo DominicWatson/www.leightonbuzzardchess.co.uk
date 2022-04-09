@@ -1,5 +1,6 @@
 ---
 title: Adrian Matthews
+photo: /assets/uploads/adymatthews.png
 lbplayer: true
 current_team: leighton-buzzard-b
 ecf: 140680C
