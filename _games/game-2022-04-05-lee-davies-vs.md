@@ -3,7 +3,7 @@ title: 2022-04-05 Dave Phillips vs Lee Davies
 gamedate: 2022-04-09T11:22:43.916Z
 match: beds-division-2-2021-22-mkc-home
 boardno: 5
-white: lee-davies
+white: dave-phillips
 black: lee-davies
 result: ½-½
 pgn: >
