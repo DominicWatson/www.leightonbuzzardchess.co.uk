@@ -2,6 +2,8 @@
 layout: page
 ---
 
+<h2>Player profile: {{ page.title }}</h2>
+
 {{ content }}
 
 {% assign games = site.games | where_exp: "game", "game.white == page.slug or game.black == page.slug" | sort: "gamedate desc" %}

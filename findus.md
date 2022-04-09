@@ -1,9 +1,9 @@
 ---
 title: Find us
-aside: false
+aside: true
 ---
 
-## Home matches
+## How to find us
 
 The club play home matches at: **Trinity Methodist Church, North Street, Leighton Buzzard, LU7 1ES**.
 

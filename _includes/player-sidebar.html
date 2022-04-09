@@ -1,0 +1,22 @@
+<h2>Player links</h2>
+<ul>
+{% if page.ecf %}
+    <li><a href="https://www.ecfrating.org.uk/v2/new/player.php?ECF_code={{ page.ecf }}">English Chess Federation Rating</a></li>
+{% endif %}
+{% if page.chesscom %}
+    <li><a href="https://www.chess.com/member/{{ page.chesscom }}">Chess.com profile ({{ page.chesscom }})</a></li>
+{% endif %}
+{% if page.lichess %}
+    <li><a href="https://lichess.org/@/{{ page.lichess }}">LiChess.org profile ({{ page.lichess }})</a></li>
+{% endif %}
+</ul>
+
+{% assign posts = site.posts | where:"author", page.slug | sort date | reverse %}
+{% if posts.size > 0 %}
+    <h2>Player posts</h2>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{{ post.url }}">{{ post.date | date_to_string }} {{ post.title }}</a>
+        {% endfor %}
+    </ul>
+{% endif %}
