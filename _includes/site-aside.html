@@ -1,5 +1,7 @@
 <aside class="aside  typeset  aside--{{ include.align | default: 'right' }}">
-  {% if page.layout == "post" %}
+  {% if page.id == "findus" %}
+    <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Trinity%20Methodist%20Church,%20Leighton%20Buzzard&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org">putlocker</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:400px;}</style><a href="https://www.embedgooglemap.net">embed google maps html</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:400px;}</style></div></div>
+  {% elsif page.layout == "post" %}
     <section class="section  section--related-posts">
       {% include post-related.html %}
     </section>
