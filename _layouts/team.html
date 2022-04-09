@@ -17,7 +17,6 @@ layout: page
 {{ content }}
 
 {% if page.leagues.size > 0 %}
-  <h2>Current season</h2>
   {% for leagueid in page.leagues %}
     {% assign league = site.leagues | where:"slug",leagueid %}
     <h3>{{ league[0].title }}</h3>
@@ -49,6 +48,8 @@ layout: page
         {% endfor %}
       </tbody>
       </table>
+    {% else %}
+      <p><em>No matches have been input for this season.</em></p>
     {% endif %}
 
   {% endfor %}
