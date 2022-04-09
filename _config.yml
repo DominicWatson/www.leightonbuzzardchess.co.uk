@@ -99,7 +99,12 @@ defaults:
       type: "matches"
     values:
       layout: match
-    scope:
+  - scope:
+      path: ""
+      type: "players"
+    values:
+      layout: player
+  - scope:
       path: ""
       type: "posts"
     values:

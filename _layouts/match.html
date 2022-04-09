@@ -4,13 +4,12 @@ layout: page
 
 {{ content }}
 
-{% assign games = site.games | where: "match", page.slug %}
+{% assign games = site.games | where: "match", page.slug | sort: "boardno" %}
 {% if games.size > 0 %}
-<h2>Uploaded games</h2>
+<h2>Boards</h2>
 <table class="table">
   <thead>
-    <th>Game</th>
-    <th>Date</th>
+    <th>Board</th>
     <th>Result</th>
   </thead>
   <tbody>
@@ -20,10 +19,9 @@ layout: page
       <tr>
         <td>
           <a href="{{ site.baseurl }}{{ game.url }}">
-            {{ white[0].title }} vs {{ black[0].title }}
+            #{{ game.boardno }} {{ white[0].title }} vs {{ black[0].title }}
           </a>
         </td>
-        <td>{{ game.gamedate | date_to_string }}</td>
         <td>{{ game.result }}</td>
       </tr>
     {% endfor %}

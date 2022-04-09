@@ -3,7 +3,6 @@ current_team: leighton-buzzard-b
 ecf: 275762L
 chesscom: domwatson
 lichess: DomWatson
-layout: player
 title: Dominic Watson
 photo: /assets/uploads/me.jpg
 lbplayer: true

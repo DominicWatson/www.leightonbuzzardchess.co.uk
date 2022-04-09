@@ -10,3 +10,5 @@ result: Win
 score: 4
 scoreavailable: 5
 ---
+
+Some content here.
