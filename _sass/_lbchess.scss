@@ -102,3 +102,35 @@ html {
     }
   }
 }
+
+.aside {
+  ul,li {
+    list-style: none;
+  }
+
+  dl {
+    margin-bottom: 0;
+
+    dd {
+      line-height: 1;
+    }
+    dt {
+      line-height: 1.5;
+    }
+
+    dd + dt {
+      padding-top:0.6rem;
+    }
+  }
+
+  .lb-teams-sidebar {
+    h3 {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .lb-team-sidebar {
+      padding-left: 1.5rem;
+    }
+  }
+}

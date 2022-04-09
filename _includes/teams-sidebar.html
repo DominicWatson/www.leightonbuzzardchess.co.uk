@@ -1,0 +1,40 @@
+{% assign lbteams = site.teams | where:"lbteam","true" %}
+<h2>Teams</h2>
+<div class="lb-teams-sidebar">
+    {% for team in lbteams %}
+        <h3><a href="{{ site.baseurl }}{{ team.url }}">{{ team.title }}</a></h3>
+        <div class="lb-team-sidebar">
+            {% for leagueid in team.leagues %}
+                {% assign league = site.leagues | where:"slug",leagueid %}
+                {% assign captain = site.players | where:"slug",team.captain %}
+                <dl>
+                    {% if captain.size > 0 %}
+                        <dt>Team captain</dt>
+                        <dd><a href="{{ captain[0].url }}">{{ captain[0].title }}</a></dd>
+                    {% endif %}
+                    <dt>Next match</dt>
+                    {% assign matches = site.matches | where:"season",site.currentseason | where:"hometeam", team.slug | where:"league", league[0].slug | where_exp:"match", "match.matchdate > site.time" | sort: "matchdate" %}
+                    {% if matches.size > 0 %}
+                        {% assign match = matches[ 0 ] %}
+                        {% assign opponent = site.teams | where:"slug",match.opponent %}
+                        <dd><a href="{{ site.baseurl }}{{ match.url }}">{{match.matchdate | date_to_string }}: {{ opponent[0].title }} ({{ match.homeaway }})</a></dd>
+                    {% else %}
+                        <dd><em>No upcoming matches.</em></dd>
+                    {% endif %}
+
+                    <dt>Most recent</dt>
+                    {% assign league = site.leagues | where:"slug",leagueid %}
+                    {% assign matches = site.matches | where:"season",site.currentseason | where:"hometeam", team.slug | where:"league", league[0].slug | where_exp:"match", "match.matchdate < site.time" | sort: "matchdate" | reverse %}
+                    {% if matches.size > 0 %}
+                        {% assign match = matches[ 0 ] %}
+                        {% assign opponent = site.teams | where:"slug",match.opponent %}
+                        <dd><a href="{{ site.baseurl }}{{ match.url }}">{{ match.matchdate | date_to_string }} {{ opponent[0].title }} ({{ match.homeaway }}) - Result: {{match.result}}</a></dd>
+                    {% else %}
+                        <dd><em>No recent matches.</em></dd>
+                    {% endif %}
+                </dl>
+                <p><a href="{{ team.url }}">See more...</a></p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
