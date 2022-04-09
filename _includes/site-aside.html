@@ -3,6 +3,10 @@
     <section class="section  section--related-posts">
       {% include post-related.html %}
     </section>
+  {% elsif page.layout == "team" %}
+    <section class="section  section--description">
+      {% include team-sidebar.html %}
+    </section>
   {% elsif page.layout == "player" %}
     <section class="section  section--description">
       {% include player-sidebar.html %}

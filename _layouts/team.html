@@ -2,30 +2,22 @@
 layout: page
 ---
 
-{{ content }}
-
-{% if page.players or page.captain %}
-<h2>Players</h2>
-{% endif  %}
-
+<h2>{{ page.title }}</h2>
 {% if page.captain %}
   {% assign captain = site.players | where:"slug", page.captain %}
-  <p>Team Captain: <a href="{{ site.baseurl }}{{ captain[0].url }}">{{ captain[0].title }}</a></li></p>
+  <div class="player-profile-header">
+    {% if captain[0].photo %}
+      <img class="player-profile-picture" src="{{ captain[0].photo }}" alt="Profile image of {{ captain[0].title }}">
+    {% endif %}
+    <p>Team Captain: <a href="{{ site.baseurl }}{{ captain[0].url }}">{{ captain[0].title }}</a></li></p>
+  </div>
+
 {% endif  %}
 
-{% if page.players %}
-<ul class="list  list--players">
-  {% for playerid in page.players %}
-    {% assign player = site.players | where:"slug", playerid %}
-    <li class="item  item--post">
-      <a href="{{ site.baseurl }}{{ player[0].url }}">{{ player[0].title }}</a></li>
-    </li>
-  {% endfor %}
-</ul>
-{% endif %}
+{{ content }}
 
 {% if page.leagues.size > 0 %}
-  <h2>Matches and Leagues</h2>
+  <h2>Current season</h2>
   {% for leagueid in page.leagues %}
     {% assign league = site.leagues | where:"slug",leagueid %}
     <h3>{{ league[0].title }}</h3>

@@ -1,0 +1,11 @@
+{% if page.players %}
+<h2>Players</h2>
+<ul class="list  list--players">
+  {% for playerid in page.players %}
+    {% assign player = site.players | where:"slug", playerid %}
+    <li class="item  item--post">
+      <a href="{{ site.baseurl }}{{ player[0].url }}">{{ player[0].title }}</a> {% if player[0].slug == page.captain %}(team captain){% endif %}</li>
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
