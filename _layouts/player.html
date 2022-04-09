@@ -3,10 +3,10 @@ layout: page
 ---
 
 <div class="player-profile-header">
-  <h2>Player profile: {{ page.title }}</h2>
-  {% if page.mugshot %}
-    <img class="player-profile-picture" src="{{ page.mughost }}">
+  {% if page.photo %}
+    <img class="player-profile-picture" src="{{ page.photo }}" alt="Profile picture for {{ page.title }}">
   {% endif %}
+  <h2>Player profile: {{ page.title }}</h2>
 </div>
 
 {{ content }}
