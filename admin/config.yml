@@ -91,6 +91,7 @@ collections:
       preview: false
     fields:
       - { label: 'Player name', name: 'title', widget: 'string' }
+      - { label: 'Mugshot', name: 'photo', widget: 'image', allow_multiple: false, required: false }
       - { label: 'LB Player', name: 'lbplayer', widget: 'boolean', hint: 'Leave unticked for players in other clubs', default: true }
       - { label: 'Current team', name: 'current_team', widget: 'relation', collection: 'teams', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'ECF Number', name: 'ecf', widget: 'string', hint: 'e.g. "275762L"', required: false }
