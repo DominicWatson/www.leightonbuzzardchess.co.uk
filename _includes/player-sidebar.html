@@ -2,7 +2,7 @@
 {% if page.current_team %}
   {% assign team = site.teams | where:"slug",page.current_team %}
   <h2>Current team</h2>
-  <p><a href="{{ team[0].url }}">{{ team[0].title }}</a></p>
+  <p><a href="{{ team[0].url }}">{{ team[0].title }}</a> {% if team[0].captain == page.slug %}(team captain){% endif %}</p>
 {% endif %}
 
 {% if page.ecf or page.chesscom or page.lichess %}
