@@ -12,6 +12,7 @@ layout: page
 <table class="table">
   <thead>
     <th>Game</th>
+    <th>Match/Event</th>
     <th>Date</th>
     <th>Result</th>
   </thead>
@@ -19,11 +20,23 @@ layout: page
     {% for game in games %}
       {% assign white = site.players | where:"slug",game.white %}
       {% assign black = site.players | where:"slug",game.black %}
+      {% if game.match %}
+        {% assign gamelink = site.matches | where:"slug",game.match %}
+      {% elsif game.event %}
+        {% assign gamelink = site.events | where:"slug",game.event %}
+      {% endif %}
       <tr>
         <td>
           <a href="{{ site.baseurl }}{{ game.url }}">
             {{ white[0].title }} vs {{ black[0].title }}
           </a>
+        </td>
+        <td>
+          {% if gamelink %}
+            <a href="{{ gamelink[0].url }}">{{ gamelink[0].title }}</a>
+          {% else %}
+            N/A
+          {% endif %}
         </td>
         <td>{{ game.gamedate | date_to_string }}</td>
         <td>{{ game.result }}</td>

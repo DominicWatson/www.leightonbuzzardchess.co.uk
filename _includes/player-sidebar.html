@@ -1,3 +1,10 @@
+
+{% if page.current_team %}
+  {% assign team = site.teams | where:"slug",page.current_team %}
+  <h2>Current team</h2>
+  <p><a href="{{ team[0].url }}">{{ team[0].title }}</a></p>
+{% endif %}
+
 <h2>Player links</h2>
 <ul>
 {% if page.ecf %}
