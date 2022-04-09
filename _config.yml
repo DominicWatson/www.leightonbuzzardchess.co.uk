@@ -43,10 +43,10 @@ navigation_header:
   url: /
 - title: About
   url: /about/
+- title: News
+  url: /blog/
 - title: Find us
   url: /findus/
-- title: Our teams
-  url: /teams/
 
 # Footer nav
 navigation_footer:
@@ -73,28 +73,37 @@ collections:
   games:
     title: Games
     output: true
+  posts:
+    title: News
+    output: true
+    description: "Club news"
 # Collection settings
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: page # Set the default layout for pages
+      layout: page
   - scope:
       path: ""
       type: "teams"
     values:
-      layout: team # Set the default layout for pages
+      layout: team
   - scope:
       path: ""
       type: "games"
     values:
-      layout: game # Set the default layout for pages
+      layout: game
   - scope:
       path: ""
       type: "matches"
     values:
-      layout: match # Set the default layout for pages
+      layout: match
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
 
 fonts:
   preconnect_urls:

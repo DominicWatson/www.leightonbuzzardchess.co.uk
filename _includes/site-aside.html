@@ -1,8 +1,7 @@
 <aside class="aside  typeset  aside--{{ include.align | default: 'right' }}">
   {% if page.layout == "page" %}
     <section class="section  section--description">
-      {% include site-upcoming.html %}
-      {% include site-recent.html %}
+      {% include team-match-sidebar.html %}
       {% include nav-social.html %}
     </section>
   {% elsif page.layout == "post" %}

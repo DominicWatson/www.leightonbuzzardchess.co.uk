@@ -13,17 +13,31 @@ collections:
         file: 'index.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false, required: false }
-          - { label: 'Teaser text', name: 'feature_text', widget: 'text', required: false }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'About Page'
         name: 'about'
         file: 'about.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Banner image', name: 'feature_image', widget: 'image', allow_multiple: false, required: false }
-          - { label: 'Teaser text', name: 'feature_text', widget: 'text', required: false }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Find us'
+        name: 'findus'
+        file: 'findus.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'blog'
+    label: 'News'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Author', name: 'author', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ] }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'seasons'
     label: 'Seasons'
@@ -114,9 +128,10 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string', hint: 'e.g. 2022-04-05: Lee Davies vs Dominic Watson' }
       - { label: 'Date', name: 'gamedate', widget: 'datetime', time_format: false }
       - { label: 'Match', name: 'match', widget: 'relation', collection: 'matches', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'Board number', name: 'boardno', widget: 'number', required: false,  value_type: "int" }
       - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'White', name: 'white', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Black', name: 'black', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
-      - { label: 'Result', name: 'result', widget: 'select', options: [ '1-0', '½-½', '0-1' ] }
+      - { label: 'Result', name: 'result', widget: 'select', options: [ '?', '1-0', '½-½', '0-1' ] }
       - { label: 'PGN', name: 'pgn', widget: 'text' }
       - { label: 'Game Report', name: 'body', widget: 'markdown', required: false }
