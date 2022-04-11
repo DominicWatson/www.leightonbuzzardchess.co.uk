@@ -158,5 +158,5 @@ collections:
       - { label: 'White', name: 'white', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Black', name: 'black', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'Result', name: 'result', widget: 'select', options: [ '?', '1-0', '½-½', '0-1' ] }
-      - { label: 'PGN', name: 'pgn', widget: 'text' }
+      - { label: 'PGN', name: 'pgn', widget: 'text', required: false }
       - { label: 'Game Report', name: 'body', widget: 'markdown', required: false }
