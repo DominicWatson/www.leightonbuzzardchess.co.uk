@@ -12,7 +12,7 @@ boards:
   - peter-taylor
   - fred-dorn
   - lee-davies
-result: Draw
-score: 2.5
+result: Win
+score: 3.5
 scoreavailable: 5
 ---
