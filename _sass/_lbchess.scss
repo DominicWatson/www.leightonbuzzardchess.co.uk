@@ -116,9 +116,14 @@ html {
   }
 }
 
+.typeset ul {
+  padding-left: 1rem;
+}
+
 .aside {
   ul,li {
     list-style: none;
+    padding-left: 0;
   }
 
   dl {
