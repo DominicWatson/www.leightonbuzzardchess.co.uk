@@ -14,7 +14,7 @@ layout: page
 {% assign games = site.games | where_exp: "game", "game.white == page.slug or game.black == page.slug" | sort: "gamedate desc" %}
 {% if games.size > 0 %}
 <h2>Game history</h2>
-<table class="table">
+<table class="table chess-results-table">
   <thead>
     <th>Game</th>
     <th>Match/Event</th>
@@ -30,7 +30,24 @@ layout: page
       {% elsif game.event %}
         {% assign gamelink = site.events | where:"slug",game.event %}
       {% endif %}
-      <tr>
+      {% if game.white == page.slug %}
+        {% if game.result == "1-0" %}
+          {% assign result = "win" %}
+        {% elsif game.result == "0-1" %}
+          {% assign result = "loss" %}
+        {% else %}
+          {% assign result = "draw" %}
+        {% endif %}
+      {% else %}
+        {% if game.result == "1-0" %}
+          {% assign result = "loss" %}
+        {% elsif game.result == "0-1" %}
+          {% assign result = "win" %}
+        {% else %}
+          {% assign result = "draw" %}
+        {% endif %}
+      {% endif %}
+      <tr class="{{ result }}">
         <td>
           <a href="{{ site.baseurl }}{{ game.url }}">
             {{ white[0].title }} vs {{ black[0].title }}
@@ -44,7 +61,7 @@ layout: page
           {% endif %}
         </td>
         <td>{{ game.gamedate | date_to_string }}</td>
-        <td>{{ game.result }}</td>
+        <td class="result-cell">{{ game.result }}</td>
       </tr>
     {% endfor %}
   </tbody>
