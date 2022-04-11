@@ -5,6 +5,6 @@ match: beds-division-2-2021-22-mkc-home
 boardno: 1
 white: george-ward
 black: kevin-williamson
-result: 0-1
+result: ½-½
 pgn: ""
 ---
