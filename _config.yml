@@ -36,6 +36,9 @@ paginate_path: blog/page:num
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
   16: '/assets/favicon-16x16.png'
   32: '/assets/favicon-32x32.png'
+  64: '/assets/favicon-64x64.png'
+  128: '/assets/favicon-128x128.png'
+  500: '/assets/favicon-500x500.png'
 
 # Header nav
 navigation_header:
