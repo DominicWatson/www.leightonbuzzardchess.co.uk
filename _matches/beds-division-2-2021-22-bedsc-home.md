@@ -6,6 +6,12 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: bedfordshire-c
 homeaway: Home
+boards:
+  - brian-valentine
+  - adrian-matthews
+  - peter-taylor
+  - dominic-watson
+  - lee-davies
 result: TBC
 score: ""
 scoreavailable: 5
