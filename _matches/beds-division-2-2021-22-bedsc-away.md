@@ -6,7 +6,13 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: bedfordshire-c
 homeaway: Away
-result: Draw
+boards:
+  - kevin-williamson
+  - adrian-matthews
+  - fred-dorn
+  - tony-readman
+  - lee-davies
+result: Win
 score: ""
 scoreavailable: 5
 ---
