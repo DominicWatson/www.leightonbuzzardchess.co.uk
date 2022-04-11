@@ -2,10 +2,19 @@
 layout: page
 ---
 
-{{ content }}
-
+{% assign league = site.leagues | where: "slug", page.league %}
+{% assign season = site.seasons | where: "slug", page.season %}
+{% assign opponent = site.teams | where: "slug", page.opponent %}
+{% assign hometeam = site.teams | where: "slug", page.hometeam %}
 {% assign games = site.games | where: "match", page.slug | sort: "boardno" %}
 {% if games.size > 0 %}
+
+<h2>{{ hometeam[0].title }} vs {{ opponent[0].title }} ({{ page.homeaway }})<br>
+  <small class="subtitle">{{ page.matchdate | date_to_string }}, {{ league[0].title }} - {{ season[0].title }}</small>
+</h2>
+
+{{ content }}
+
 <h2>Boards</h2>
 <table class="table">
   <thead>
