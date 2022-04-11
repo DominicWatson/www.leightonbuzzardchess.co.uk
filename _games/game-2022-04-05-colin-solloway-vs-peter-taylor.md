@@ -6,5 +6,5 @@ boardno: 3
 white: colin-solloway
 black: peter-taylor
 result: ½-½
-pgn: d
+pgn: ""
 ---
