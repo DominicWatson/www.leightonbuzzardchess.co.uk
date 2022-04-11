@@ -6,7 +6,9 @@ leagues:
 captain: adrian-matthews
 players:
   - adrian-matthews
+  - peter-taylor
   - fred-dorn
+  - tony-readman
   - dominic-watson
   - lee-davies
 ---
