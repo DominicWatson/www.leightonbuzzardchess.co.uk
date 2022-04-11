@@ -1,0 +1,23 @@
+{% if page.categories and page.categories.size > 0 %}
+  {% capture categories %}
+    {% for category in page.categories %}
+      <span class="label  label--category"><a href="{{ site.baseurl }}/categories/#{{ category | downcase | slugify }}">{{ category }}</a></span>{% if forloop.last == false %},{% endif %}
+    {% endfor %}
+  {% endcapture %}
+  {% assign categories = categories | append categories, "&nbsp;&middot;&nbsp;" %}
+{% elsif page.category %}
+  {% capture categories %}
+    <span class="label  label--category"><a href="{{ site.baseurl }}/categories/#{{ page.category | downcase | slugify }}">{{ page.category }}</a></span>
+  {% endcapture %}
+  {% assign categories = categories | append categories, "&nbsp;&middot;&nbsp;" %}
+{% endif %}
+
+
+<small class="small  post-meta">
+  {% assign date_format = site.date_format | default: "%d %b %Y" %}
+  {{ categories }}<time datetime="{{ page.date | date_to_xmlschema }}" class="time">{{ page.date | date: date_format }}</time>
+  {% if page.author %}
+    {% assign author = site.players | where:"slug",page.author %}
+    by <a href="{{ author[0].url }}">{{ author[0].title }}</a>
+  {% endif %}
+</small>
