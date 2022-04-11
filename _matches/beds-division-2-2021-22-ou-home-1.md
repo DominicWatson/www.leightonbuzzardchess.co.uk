@@ -6,6 +6,12 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: open-university
 homeaway: Home
+boards:
+  - peter-taylor
+  - fred-dorn
+  - tony-readman
+  - dominic-watson
+  - lee-davies
 result: Win
 score: ""
 scoreavailable: 5
