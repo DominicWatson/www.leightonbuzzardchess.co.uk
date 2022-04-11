@@ -12,4 +12,4 @@ players:
   - kevin-williamson
   - brian-valentine
 ---
-Our glorious A team have a long history of success in the Bedfordshire league. You can view the current team members and season's matches below.
+The Leighton Buzzard A team have a long history of success in the Bedfordshire leagues. You can view the current team members and season's matches below.
