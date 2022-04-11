@@ -9,7 +9,7 @@ layout: page
 
 {{ content }}
 
-{% if page.pgn %}
+{% if page.pgn != blank %}
   <script type="text/template" class="pgn-game">{{page.pgn}}</script>
 {% else %}
 <p><em>No PGN for this game has been uploaded.</em></p>
