@@ -11,7 +11,7 @@ layout: page
 
 {{ content }}
 
-{% assign games = site.games | where_exp: "game", "game.white == page.slug or game.black == page.slug" | sort: "gamedate desc" %}
+{% assign games = site.games | where_exp: "game", "game.white == page.slug or game.black == page.slug" | sort: "gamedate" | reverse %}
 {% if games.size > 0 %}
 <h2>Game history</h2>
 <table class="table chess-results-table">
