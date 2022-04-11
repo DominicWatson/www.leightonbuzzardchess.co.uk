@@ -6,6 +6,12 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: milton-keynes-c
 homeaway: Away
+boards:
+  - brian-valentine
+  - fred-dorn
+  - tony-readman
+  - dominic-watson
+  - lee-davies
 result: Win
 score: ""
 scoreavailable: 5
