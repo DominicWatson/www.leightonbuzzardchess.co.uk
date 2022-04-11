@@ -156,7 +156,9 @@ collections:
       - { label: 'Board number', name: 'boardno', widget: 'number', required: false,  value_type: "int" }
       - { label: 'Event', name: 'event', widget: 'relation', collection: 'events', required: false, value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
       - { label: 'White', name: 'white', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'White rating', name: 'whiterating', widget: 'string', required: false  }
       - { label: 'Black', name: 'black', widget: 'relation', collection: 'players', value_field: '{{slug}}', search_fields: [ 'title' ], display_fields: [ 'title' ]  }
+      - { label: 'Black rating', name: 'blackrating', widget: 'string', required: false  }
       - { label: 'Result', name: 'result', widget: 'select', options: [ '?', '1-0', '½-½', '0-1' ] }
       - { label: 'PGN', name: 'pgn', widget: 'text', required: false }
       - { label: 'Game Report', name: 'body', widget: 'markdown', required: false }
