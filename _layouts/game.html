@@ -2,6 +2,11 @@
 layout: page
 ---
 
+{% assign white = site.players | where: "slug", page.white %}
+{% assign black = site.players | where: "slug", page.black %}
+
+<h2>{{ white[0].title }} vs {{ black[0].title }}</h2>
+
 {{ content }}
 
 {% if page.pgn %}

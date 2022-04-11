@@ -1,0 +1,38 @@
+{% assign white = site.players | where: "slug", page.white %}
+{% assign black = site.players | where: "slug", page.black %}
+{% assign match = site.matches | where: "slug", page.match %}
+{% assign event = site.events | where: "slug", page.event %}
+
+{% if match.size > 0 %}
+  {% assign hometeam = site.teams | where: "slug", match[ 0 ].hometeam %}
+  {% assign opponent = site.teams | where: "slug", match[ 0 ].opponent %}
+  {% assign league = site.leagues | where: "slug", match[ 0 ].league %}
+  {% assign season = site.seasons | where: "slug", match[ 0 ].season %}
+{% endif %}
+
+<h2>Game details</h2>
+<dl>
+  <dt>White</dt>
+  <dd><a href="{{ white[0].url }}">{{ white[0].title }}</a></dd>
+  <dt>Black</dt>
+  <dd><a href="{{ black[0].url }}">{{ black[0].title }}</a></dd>
+  <dt>Date</dt>
+  <dd>{{ page.gamedate | date_to_string }}</dd>
+  <dt>Result</dt>
+  <dd>{{ page.result }}</dd>
+
+  {% if match.size > 0 %}
+    <dt>Match</dt>
+    <dd><a href="{{ match[0].url }}">{{ hometeam[0].title }} vs {{ opponent[0].title }} ({{ match[0].homeaway }})</a></dd>
+    <dt>League/Season</dt>
+    <dd>{{ league[0].title }} - {{ season[0].title }}</dd>
+  {% elsif event.size > 0 %}
+    <dt>Event</dt>
+    <dd><a href="{{ event[0].url }}">{{ event[0].title }}</a></dd>
+  {% endif %}
+
+  {% if page.pgn %}
+    <dt>PGN</dt>
+    <dd><pre><code>{{ page.pgn }}</code></pre></dd>
+  {% endif %}
+</dl>
