@@ -5,6 +5,8 @@
 
 <h2>Match details</h2>
 <dl>
+  <dt>Result</dt>
+  <dd class="result {{ page.result | downcase }}">{{ page.result }}</dd>
   <dt>LB Team</dt>
   <dd><a href="{{ hometeam[0].url }}">{{ hometeam[0].title }}</a></dd>
   <dt>Opponent</dt>
@@ -15,8 +17,6 @@
   <dd>{{ page.matchdate | date_to_string }}</dd>
   <dt>League/Season</dt>
   <dd>{{ league[0].title }} - {{ season[0].title }}</dd>
-  <dt>Result</dt>
-  <dd class="{{ page.result | downcase }}">{{ page.result }}</dd>
   {% if page.boards %}
     <dt>LB Boards</dt>
     {% for playerid in page.boards %}

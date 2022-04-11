@@ -222,6 +222,40 @@ html {
 
 }
 
+dd.result {
+  &:before {
+    width: 1.28571429em;
+    text-align: center;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+  }
+  &.win {
+    color: $leightongreen;
+    &:before {
+      content: "\f058";
+    }
+  }
+
+  &.loss {
+    color: $leightonred;
+    &:before {
+      content: "\f05e";
+    }
+  }
+
+  &.draw {
+    &:before {
+      content: "\3d";
+    }
+  }
+  &.tbc {
+    &:before {
+      content: "\f128";
+    }
+  }
+}
+
 .pgn-viewer-game {
   margin: 1rem auto !important;
   width: 500px;
