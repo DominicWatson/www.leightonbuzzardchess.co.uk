@@ -12,7 +12,7 @@ boards:
   - fred-dorn
   - tony-readman
   - lee-davies
-result: Win
-score: ""
+result: Draw
+score: 2.5
 scoreavailable: 5
 ---
