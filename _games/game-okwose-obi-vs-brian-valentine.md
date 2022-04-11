@@ -1,5 +1,5 @@
 ---
-title: Okwose Obi vs Brian Valentine
+title: "2022-04-05: Okwose Obi vs Brian Valentine"
 gamedate: 2022-04-05T19:48:16.609Z
 match: beds-division-1-2021-22-beds-a-home
 boardno: 5
