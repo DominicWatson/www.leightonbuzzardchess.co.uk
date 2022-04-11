@@ -6,7 +6,7 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: bedfordshire-c
 homeaway: Away
-result: TBC
+result: Draw
 score: ""
 scoreavailable: 5
 ---

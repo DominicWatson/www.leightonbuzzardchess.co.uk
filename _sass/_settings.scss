@@ -1,6 +1,7 @@
 // Theme colors
 $leightonyellow: #f9dc40 !default;
 $leightonred: #e10101 !default;
+$leightongreen: green !default;
 
 // Background colours
 $backgroundColour: #f2f4f5 !default;
@@ -13,6 +14,7 @@ $borderColour: #384743 !default;
 // Text colours
 $headingColour: #2a2f36 !default;
 $bodyColour: #384743 !default;
+$mutedColour: lighten( $bodyColour, 15% ) !default;
 $linkColour: #242e2b !default;
 $hoverColour: $leightonred !default;
 $focusColour: #242e2b !default;

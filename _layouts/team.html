@@ -19,11 +19,12 @@ layout: page
 {% if page.leagues.size > 0 %}
   {% for leagueid in page.leagues %}
     {% assign league = site.leagues | where:"slug",leagueid %}
-    <h3>{{ league[0].title }}</h3>
+    {% assign season = site.seasons | where:"slug",site.currentseason %}
+    <h3>{{ league[0].title }} - {{ season[0].title }}</h3>
 
     {% assign matches = site.matches | where:"season",site.currentseason | where:"hometeam", page.slug | where:"league", league[0].slug | sort: "matchdate" %}
     {% if matches.size > 0 %}
-    <table class="table">
+    <table class="table chess-results-table">
       <thead>
         <th>Match</th>
         <th>Date</th>
@@ -32,18 +33,16 @@ layout: page
       <tbody>
         {% for match in matches %}
           {% assign opponent = site.teams | where:"slug",match.opponent %}
-          <tr>
+          <tr class="{{ match.result | downcase }}">
             <td>
               <a href="{{ site.baseurl }}{{ match.url }}">
-              {% if match.homeaway == "home" %}
-                {{ page.title }} vs {{ opponent[0].title }}
-              {% else %}
-                {{ opponent[0].title }} vs {{ page.title }}
-              {% endif %}
+              {{ opponent[0].title }} ({{ match.homeaway }})
               </a>
             </td>
             <td>{{ match.matchdate | date_to_string }}</td>
-            <td>{{ match.result }} ({{ match.score }}/{{ match.scoreavailable }})</td>
+            <td class="result-cell">
+              {{ match.result }} {% if match.score.is_an_int %}({{ match.score }}{% if match.scoreavailable.is_an_int %} / {{ match.scoreavailable }}{% endif %}){% endif %}
+            </td>
           </tr>
         {% endfor %}
       </tbody>

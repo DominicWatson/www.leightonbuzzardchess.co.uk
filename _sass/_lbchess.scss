@@ -147,3 +147,77 @@ html {
     }
   }
 }
+
+.table {
+  thead {
+    th, td {
+      border-bottom: 1px solid $borderColour;
+    }
+
+    + tbody {
+      tr:first-child {
+        td,th {
+          padding-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.chess-results-table {
+  tbody {
+    .result-cell:before {
+      width: 1.28571429em;
+      text-align: center;
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+    }
+
+    a:hover {
+      color:inherit;
+      text-decoration:underline;
+    }
+    tr.win {
+      .result-cell:before {
+        content: "\f058";
+      }
+      th, td, a {
+        color: $leightongreen;
+      }
+    }
+    tr.loss {
+      .result-cell:before {
+        content: "\f05e";
+
+      }
+      th, td, a {
+        color: $leightonred;
+      }
+    }
+    tr.draw {
+      .result-cell:before {
+        content: "\3d";
+      }
+      th, td, a {
+      }
+    }
+    tr.abandoned {
+      th, td, a {
+        font-style: italic;
+        color: $mutedColour;
+        text-decoration:line-through;
+      }
+    }
+    tr.tbc {
+      .result-cell:before {
+        content: "\f128";
+      }
+      th, td, a {
+        font-style: italic;
+        color: $mutedColour;
+      }
+    }
+  }
+
+}

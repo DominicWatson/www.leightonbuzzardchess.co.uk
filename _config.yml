@@ -43,7 +43,7 @@ navigation_header:
   url: /
 - title: About
   url: /about/
-- title: News
+- title: Posts
   url: /blog/
 - title: Find us
   url: /findus/
@@ -74,9 +74,9 @@ collections:
     title: Games
     output: true
   posts:
-    title: News
+    title: Posts
     output: true
-    description: "Club news"
+    description: Club news and other posts
 # Collection settings
 defaults:
   - scope:
