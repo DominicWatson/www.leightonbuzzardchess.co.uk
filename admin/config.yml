@@ -5,6 +5,7 @@ media_folder: 'assets/uploads'
 collections:
   - name: 'pages'
     label: 'Pages'
+    label_singular: 'Page'
     editor:
       preview: false
     files:
@@ -27,7 +28,8 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'blog'
-    label: 'News'
+    label: 'Posts'
+    label_singular: 'Post'
     folder: '_posts/'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
@@ -41,6 +43,7 @@ collections:
 
   - name: 'seasons'
     label: 'Seasons'
+    label_singular: 'Season'
     folder: '_seasons/'
     create: true
     editor:
@@ -50,6 +53,7 @@ collections:
 
   - name: 'leagues'
     label: 'Leagues'
+    label_singular: 'League'
     folder: '_leagues/'
     create: true
     editor:
@@ -60,6 +64,7 @@ collections:
 
   - name: 'honours'
     label: 'Honours'
+    label_singular: 'Honour'
     folder: '_honours/'
     create: true
     editor:
@@ -73,6 +78,7 @@ collections:
 
   - name: 'events'
     label: 'Events'
+    label_singular: 'Event'
     folder: '_events/'
     create: true
     editor:
@@ -84,6 +90,7 @@ collections:
 
   - name: 'teams'
     label: 'Teams'
+    label_singular: 'Team'
     folder: '_teams/'
     create: true
     editor:
@@ -98,6 +105,7 @@ collections:
 
   - name: 'players'
     label: 'Players'
+    label_singular: 'Player'
     folder: '_players/'
     create: true
     editor:
@@ -114,6 +122,7 @@ collections:
 
   - name: 'matches'
     label: 'Matches'
+    label_singular: 'Match'
     folder: '_matches/'
     create: true
     editor:
@@ -134,6 +143,7 @@ collections:
 
   - name: 'games'
     label: 'Games'
+    label_singular: 'Game'
     folder: '_games/'
     create: true
     slug: 'game-{{slug}}'
