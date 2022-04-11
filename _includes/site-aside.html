@@ -13,6 +13,10 @@
     <section class="section  section--description">
       {% include player-sidebar.html %}
     </section>
+  {% elsif page.layout == "match" %}
+    <section class="section  section--description">
+      {% include match-sidebar.html %}
+    </section>
   {% elsif page.layout == "page" %}
     <section class="section  section--description">
       {% include latest-news.html %}

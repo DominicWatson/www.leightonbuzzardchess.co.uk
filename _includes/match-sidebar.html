@@ -1,0 +1,29 @@
+{% assign league = site.leagues | where: "slug", page.league %}
+{% assign season = site.seasons | where: "slug", page.season %}
+{% assign opponent = site.teams | where: "slug", page.opponent %}
+{% assign hometeam = site.teams | where: "slug", page.hometeam %}
+
+<h2>Match details</h2>
+<dl>
+  <dt>LB Team</dt>
+  <dd><a href="{{ hometeam[0].url }}">{{ hometeam[0].title }}</a></dd>
+  <dt>Opponent</dt>
+  <dd>{{ opponent[0].title }}</dd>
+  <dt>Home/Away</dt>
+  <dd>{{ page.homeaway }}</dd>
+  <dt>Date</dt>
+  <dd>{{ page.matchdate | date_to_string }}</dd>
+  <dt>League/Season</dt>
+  <dd>{{ league[0].title }} - {{ season[0].title }}</dd>
+  <dt>Result</dt>
+  <dd class="{{ page.result | downcase }}">{{ page.result }}</dd>
+  {% if page.boards %}
+    <dt>LB Boards</dt>
+    {% for playerid in page.boards %}
+      {% assign player = site.players | where:"slug", playerid %}
+      <dd class="item  item--post">
+        #{{ forloop.index }} <a href="{{ site.baseurl }}{{ player[0].url }}">{{ player[0].title }}</a> {% if player[0].slug == page.captain %}(team captain){% endif %}
+      </dd>
+    {% endfor %}
+  {% endif %}
+</dl>
