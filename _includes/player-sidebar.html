@@ -29,3 +29,13 @@
         {% endfor %}
     </ul>
 {% endif %}
+
+{% assign honours = site.honours | where:"player", page.slug | sort: "date" | reverse %}
+{% if honours.size > 0 %}
+  <h2>Roll of honour</h2>
+  <ul>
+  {% for honour in honours %}
+    <li><a href="{{ honour.url }}">{{ honour.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endif %}
