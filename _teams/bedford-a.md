@@ -1,4 +1,4 @@
 ---
-title: Bedfordshire B
+title: Bedford A
 lbteam: false
 ---

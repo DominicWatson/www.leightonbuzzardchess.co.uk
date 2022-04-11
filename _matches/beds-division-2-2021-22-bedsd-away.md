@@ -4,7 +4,7 @@ matchdate: 2022-02-03T14:01:03.928Z
 league: beds-div2
 season: 2021-22
 hometeam: leighton-buzzard-b
-opponent: bedfordshire-d
+opponent: bedford-d
 homeaway: Away
 boards:
   - kevin-williamson
