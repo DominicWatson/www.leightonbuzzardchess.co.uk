@@ -77,6 +77,11 @@ collections:
     title: Posts
     output: true
     description: Club news and other posts
+  honours:
+    title: Honours
+    output: true
+    description: Team and individual honours
+
 # Collection settings
 defaults:
   - scope:
