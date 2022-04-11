@@ -13,6 +13,6 @@ boards:
   - dominic-watson
   - lee-davies
 result: Win
-score: ""
+score: 3.5
 scoreavailable: 5
 ---
