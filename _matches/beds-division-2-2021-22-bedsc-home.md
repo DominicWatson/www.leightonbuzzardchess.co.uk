@@ -13,7 +13,7 @@ boards:
   - dominic-watson
   - lee-davies
 result: Win
-score: 3.5
+score: 3
 scoreavailable: 5
 ---
 This was a critical matchup in the League Division 2 season, winning the match leaves LBB needing a single point from the remaining two games.
