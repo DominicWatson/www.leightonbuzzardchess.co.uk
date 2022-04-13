@@ -7,12 +7,15 @@ hometeam: leighton-buzzard-b
 opponent: bedford-c
 homeaway: Home
 boards:
-  - brian-valentine
-  - adrian-matthews
   - peter-taylor
+  - adrian-matthews
+  - brian-valentine
   - dominic-watson
   - lee-davies
-result: TBC
-score: ""
+result: Win
+score: 3.5
 scoreavailable: 5
 ---
+This was a critical matchup in the League Division 2 season, winning the match leaves LBB needing a single point from the remaining two games.
+
+Adrian to say a bit about the game here... :)
