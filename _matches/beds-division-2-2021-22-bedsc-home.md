@@ -7,9 +7,9 @@ hometeam: leighton-buzzard-b
 opponent: bedford-c
 homeaway: Home
 boards:
-  - peter-taylor
-  - adrian-matthews
   - brian-valentine
+  - adrian-matthews
+  - peter-taylor
   - dominic-watson
   - lee-davies
 result: Win
