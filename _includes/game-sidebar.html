@@ -13,9 +13,9 @@
 <h2>Game details</h2>
 <dl>
   <dt>White</dt>
-  <dd><a href="{{ white[0].url }}">{{ white[0].title }}</a></dd>
+  <dd><a href="{{ white[0].url }}">{{ white[0].title }}</a>{% if page.whiterating != blank %}<span class="note">, ECF Grade: {{ page.whiterating }}</span>{% endif %}</dd>
   <dt>Black</dt>
-  <dd><a href="{{ black[0].url }}">{{ black[0].title }}</a></dd>
+  <dd><a href="{{ black[0].url }}">{{ black[0].title }}</a>{% if page.blackrating != blank %}<span class="note">, ECF Grade: {{ page.blackrating }}</span>{% endif %}</dd>
   <dt>Date</dt>
   <dd>{{ page.gamedate | date_to_string }}</dd>
   <dt>Result</dt>

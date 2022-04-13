@@ -5,7 +5,11 @@ layout: page
 {% assign white = site.players | where: "slug", page.white %}
 {% assign black = site.players | where: "slug", page.black %}
 
-<h2>{{ white[0].title }} vs {{ black[0].title }}</h2>
+<h2>
+  {{ white[0].title }}{% if page.whiterating != blank %} ({{ page.whiterating }}){% endif %}
+  vs
+  {{ black[0].title }}{% if page.blackrating != blank %} ({{ page.blackrating }}){% endif %}
+</h2>
 
 {{ content }}
 

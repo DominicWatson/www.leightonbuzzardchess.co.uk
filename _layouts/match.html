@@ -44,7 +44,10 @@ layout: page
       <tr class="{{ result }}">
         <td>
           <a href="{{ site.baseurl }}{{ game.url }}">
-            #{{ game.boardno }} {{ white[0].title }} vs {{ black[0].title }}
+            #{{ game.boardno }}
+            {{ white[0].title }}{% if game.whiterating != blank %} ({{ game.whiterating }}){% endif %}
+            vs
+            {{ black[0].title }}{% if game.blackrating != blank %} ({{ game.blackrating }}){% endif %}
           </a>
         </td>
         <td class="result-cell">

@@ -1,5 +1,5 @@
 ---
-title: "2022-04-12: Dominic Watson vs Giuseppe Valeria"
+title: "2022-04-12: Dominic Watson vs Giuseppe Valerio"
 gamedate: 2022-04-13T09:34:25.843Z
 match: beds-division-2-2021-22-bedsc-home
 boardno: 4
