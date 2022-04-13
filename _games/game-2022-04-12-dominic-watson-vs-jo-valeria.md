@@ -4,8 +4,9 @@ gamedate: 2022-04-13T09:34:25.843Z
 match: beds-division-2-2021-22-bedsc-home
 boardno: 4
 white: dominic-watson
-whiterating: ""
+whiterating: 1882e
 black: giuseppe-valerio
+blackrating: "1728"
 result: 1-0
 pgn: |
   1.e4 g6 2.d4 Bg7 3.Be3 c5 4.Nf3 Nf6 5.Nc3 Ng4 6.Bf4 d6 7.h3 cxd4 8.Nb5 Nf6
