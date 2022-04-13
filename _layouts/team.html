@@ -22,6 +22,10 @@ layout: page
     {% assign season = site.seasons | where:"slug",site.currentseason %}
     <h3>{{ league[0].title }} - {{ season[0].title }}</h3>
 
+    {% if league[0].bedscode and league[0].bedscode != blank %}
+    <p><span class="fa fa-fw fa-external-link"></span> <a target="_blank" href="http://www.adrianelwin.co.uk/PHPFiles/Division.php?year={{ season[0].bedscode }}&comp={{ league[0].bedscode }}">Official Bedfordshire League Table</a></p>
+    {% endif %}
+
     {% assign matches = site.matches | where:"season",site.currentseason | where:"hometeam", page.slug | where:"league", league[0].slug | sort: "matchdate" %}
     {% if matches.size > 0 %}
     <table class="table chess-results-table">

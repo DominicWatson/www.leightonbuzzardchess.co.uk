@@ -50,6 +50,7 @@ collections:
       preview: false
     fields:
       - { label: 'Season name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
+      - { label: 'Beds code', name: 'bedscode', widget: 'string', hint: "e.g. 202122 - this is the code used on the Bedfordshire chess website. Used for autogenerating links to league tables." }
 
   - name: 'leagues'
     label: 'Leagues'
@@ -60,6 +61,7 @@ collections:
       preview: false
     fields:
       - { label: 'League name', name: 'title', widget: 'string', hint: "e.g. 2021/22" }
+      - { label: 'Beds code', name: 'bedscode', widget: 'string', hint: "e.g. BedsDiv1 - this is the code used on the Bedfordshire chess website. Used for autogenerating links to league tables.", required: false }
       - { label: 'Description', name: 'body', widget: 'markdown', required: false }
 
   - name: 'honours'
