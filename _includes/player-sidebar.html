@@ -2,20 +2,20 @@
 {% if page.current_team %}
   {% assign team = site.teams | where:"slug",page.current_team %}
   <h2>Current team</h2>
-  <p><a href="{{ team[0].url }}">{{ team[0].title }}</a> {% if team[0].captain == page.slug %}(team captain){% endif %}</p>
+  <p><i class="fa fa-fw fa-user-group"></i> <a href="{{ team[0].url }}">{{ team[0].title }}</a> {% if team[0].captain == page.slug %}(team captain){% endif %}</p>
 {% endif %}
 
 {% if page.ecf or page.chesscom or page.lichess %}
     <h2>Player links</h2>
-    <ul>
+    <ul class="fa-ul">
     {% if page.ecf %}
-        <li><a href="https://www.ecfrating.org.uk/v2/new/player.php?ECF_code={{ page.ecf }}">English Chess Federation Rating</a></li>
+        <li><span class="fa-li"><i class="fa fa-fw fa-link"></i></span> <a href="https://www.ecfrating.org.uk/v2/new/player.php?ECF_code={{ page.ecf }}">English Chess Federation Rating</a></li>
     {% endif %}
     {% if page.chesscom %}
-        <li><a href="https://www.chess.com/member/{{ page.chesscom }}">Chess.com profile ({{ page.chesscom }})</a></li>
+        <li><span class="fa-li"><i class="fa fa-fw fa-link"></i></span> <a href="https://www.chess.com/member/{{ page.chesscom }}">Chess.com profile ({{ page.chesscom }})</a></li>
     {% endif %}
     {% if page.lichess %}
-        <li><a href="https://lichess.org/@/{{ page.lichess }}">LiChess.org profile ({{ page.lichess }})</a></li>
+        <li><span class="fa-li"><i class="fa fa-fw fa-link"></i></span> <a href="https://lichess.org/@/{{ page.lichess }}">LiChess.org profile ({{ page.lichess }})</a></li>
     {% endif %}
     </ul>
 {% endif %}
