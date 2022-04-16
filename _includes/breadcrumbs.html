@@ -1,0 +1,48 @@
+{% assign pagepos = 2 %}
+{% if page.id != "homepage" %}
+    <ol vocab="http://schema.org/" typeof="BreadcrumbList" class="site-crumbs">
+        {% include crumbs/home.html %}
+
+        {% if page.layout == "post" %}
+          {% assign pagepos = 3 %}
+          {% include crumbs/posts.html %}
+
+        {% elsif page.layout == "team" %}
+          {% assign pagepos = 3 %}
+          {% include crumbs/teams.html %}
+
+        {% elsif page.layout == "match" %}
+          {% assign pagepos = 4 %}
+          {% assign team = site.teams | where:"slug", page.hometeam %}
+          {% assign team = team[0] %}
+          {% include crumbs/teams.html %}
+          {% include crumbs/generic.html title=team.title link=team.url pos=3 %}
+
+        {% elsif page.layout == "game" %}
+          {% if page.match != blank %}
+            {% assign pagepos = 5 %}
+            {% assign match = site.matches | where:"slug", page.match %}
+            {% assign match = match[0] %}
+            {% assign team = site.teams | where:"slug", match.hometeam %}
+            {% assign team = team[0] %}
+
+            {% include crumbs/teams.html %}
+            {% include crumbs/generic.html title=team.title link=team.url pos=3 %}
+            {% include crumbs/generic.html title=match.title link=match.url pos=4 %}
+          {% endif %}
+
+        {% elsif page.layout == "player" and page.lbplayer == true and page.current_team != blank %}
+          {% assign pagepos = 4 %}
+          {% assign team = site.teams | where:"slug", page.current_team %}
+          {% assign team = team[0] %}
+          {% include crumbs/teams.html %}
+          {% include crumbs/generic.html title=team.title link=team.url pos=3 %}
+
+        {% endif %}
+
+        <li property="itemListElement" typeof="ListItem" class="active-item">
+            <span property="name">{{ page.title }}</span>
+            <meta property="position" content="{{ pagepos }}">
+        </li>
+    </ol>
+{% endif %}

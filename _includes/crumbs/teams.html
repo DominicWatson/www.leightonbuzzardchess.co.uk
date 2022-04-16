@@ -1,0 +1,5 @@
+{% assign teampage = site.pages | where:"id", "teams" %}
+<li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage" href="{{ teampage[ 0 ].url }}"><span property="name">{{ teampage[ 0 ].title }}</span></a>
+    <meta property="position" content="2">
+</li>

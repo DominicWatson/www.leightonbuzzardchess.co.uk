@@ -1,5 +1,6 @@
 ---
-title: Our Teams
+title: Fixtures/Results
 layout: teams
+id: teams
 excerpt: ""
 ---

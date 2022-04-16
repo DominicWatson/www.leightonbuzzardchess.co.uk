@@ -1,0 +1,5 @@
+{% assign postspage = site.pages | where:"id", "blog" %}
+<li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage" href="{{ postspage[0].url }}"><span property="name">{{ postspage[0].title }}</span></a>
+    <meta property="position" content="2">
+</li>

@@ -307,3 +307,32 @@ a > .fa {
 i.fa {
   font-style: normal;
 }
+
+.typeset .site-crumbs {
+  font-size: 70%;
+  li {
+    display: inline;
+    list-style-type: none !important;
+
+    &::before {
+      content: "//";
+      font-feature-settings: none;
+      margin: 0 0.4rem;
+      width: auto;
+      position: static;
+      text-align: right;
+      color: $disabledColour;
+    }
+
+    &:first-child::before {
+      content: "";
+      margin-left: 0;
+    }
+
+    &.active-item {
+      a {
+        text-decoration: none !important;
+      }
+    }
+  }
+}
