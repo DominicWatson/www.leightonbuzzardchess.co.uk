@@ -262,8 +262,27 @@ dd.result {
 }
 
 .pgn-viewer-game {
-  margin: 1rem auto !important;
+  margin: 2rem auto !important;
   width: 500px;
+
+  &.pgnvjs {
+    .buttons {
+      margin-top: 1rem;
+    }
+
+    .moves {
+      margin-top: 1rem;
+      font-weight: 300;
+      color: $mutedColour;
+      move {
+        padding-right: 1rem;
+        &.white {
+          padding-right: 0;
+        }
+      }
+    }
+
+  }
 }
 
 .note {
@@ -273,4 +292,8 @@ dd.result {
 
 a > .fa {
   text-decoration: none;
+}
+
+i.fa {
+  font-style: normal;
 }
