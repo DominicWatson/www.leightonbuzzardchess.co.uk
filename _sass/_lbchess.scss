@@ -68,13 +68,15 @@ html {
   flex-direction: row;
   justify-content: left;
 
-  .player-profile-picture {
-    width: 100px;
-    max-width: 5rem;
-    border-radius: 50%;
-    margin-right: 1rem;
-  }
 }
+.player-profile-picture {
+  width: 100px;
+  max-width: 5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+
 
 @media screen and (max-width: 40em) {
   .header {
@@ -114,10 +116,33 @@ html {
       }
     }
   }
+
+  .list--players {
+    li {
+      display:flex;
+      flex-direction: row;
+      margin-bottom: 0.4rem;
+
+      a {
+        margin-right: 0.4rem;
+      }
+    }
+  }
 }
 
 .typeset ul {
   padding-left: 1rem;
+
+  &.fa-ul {
+    margin-left: 1.6rem;
+  }
+
+  li {
+    a, a:hover, a:active, a:focus {
+      background: none;
+      text-shadow: none;
+    }
+  }
 }
 
 .aside {
@@ -150,6 +175,10 @@ html {
     .lb-team-sidebar {
       padding-left: 1.5rem;
     }
+  }
+
+  .player-profile-picture {
+    width: 32px;
   }
 }
 

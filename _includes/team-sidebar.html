@@ -3,8 +3,10 @@
 <ul class="list  list--players">
   {% for playerid in page.players %}
     {% assign player = site.players | where:"slug", playerid %}
+    {% assign player = player[0] %}
     <li class="item  item--post">
-      <a href="{{ site.baseurl }}{{ player[0].url }}">{{ player[0].title }}</a> {% if player[0].slug == page.captain %}(team captain){% endif %}</li>
+      {% include player-photo.html photo=player.photo name=player.title %}
+      <a href="{{ site.baseurl }}{{ player.url }}">{{ player.title }}</a> {% if player.slug == page.captain %}(team captain){% endif %}</li>
     </li>
   {% endfor %}
 </ul>
@@ -13,9 +15,12 @@
 {% assign honours = site.honours | where:"team", page.slug | sort: "date" | reverse %}
 {% if honours.size > 0 %}
   <h2>Roll of honour</h2>
-  <ul>
+  <ul class="fa-ul">
   {% for honour in honours %}
-    <li>{{ honour.title }}</li>
+    <li>
+      <span class="fa-li"><i class="fa fa-fw fa-trophy"></i></span>
+      {{ honour.title }}
+    </li>
   {% endfor %}
   </ul>
 {% endif %}

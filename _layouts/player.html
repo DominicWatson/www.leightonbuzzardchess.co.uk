@@ -3,9 +3,7 @@ layout: page
 ---
 
 <div class="player-profile-header">
-  {% if page.photo %}
-    <img class="player-profile-picture" src="{{ page.photo }}" alt="Profile picture for {{ page.title }}">
-  {% endif %}
+  {% include player-photo.html photo=page.photo name=page.title %}
   <h2>Player profile: {{ page.title }}</h2>
 </div>
 

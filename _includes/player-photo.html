@@ -1,0 +1,9 @@
+{% if include.photo != blank %}
+  {% assign asset=include.photo %}
+  {% assign class="player-profile-picture" %}
+{% else %}
+  {% assign asset="/assets/grandmaster.png" %}
+  {% assign class="player-profile-picture no-photo" %}
+{% endif %}
+
+<img class="{{ class }}" src="{{ asset }}" alt="Profile picture for {{ include.name }}">
