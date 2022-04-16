@@ -1,5 +1,5 @@
 {% assign lbteams = site.teams | where:"lbteam","true" %}
-<h2>Teams & fixtures</h2>
+<h2>Teams</h2>
 <ul>
   {% for team in lbteams %}
     <li><a href="{{ site.baseurl }}{{ team.url }}">{{ team.title }}</a></li>
