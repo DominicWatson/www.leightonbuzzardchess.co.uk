@@ -15,6 +15,7 @@ $borderColour: #384743 !default;
 $headingColour: #2a2f36 !default;
 $bodyColour: #384743 !default;
 $mutedColour: lighten( $bodyColour, 15% ) !default;
+$disabledColour: lighten( $bodyColour, 50% ) !default;
 $linkColour: #242e2b !default;
 $hoverColour: $leightonred !default;
 $focusColour: #242e2b !default;

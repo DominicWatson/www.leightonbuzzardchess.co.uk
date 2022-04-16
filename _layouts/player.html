@@ -20,6 +20,7 @@ layout: page
     <th>Match/Event</th>
     <th>Date</th>
     <th>Result</th>
+    <th class="pgn-link">PGN?</th>
   </thead>
   <tbody>
     {% for game in games %}
@@ -49,9 +50,9 @@ layout: page
       {% endif %}
       <tr class="{{ result }}">
         <td>
-          <a href="{{ site.baseurl }}{{ game.url }}">
+          {% if game.pgn != blank %}<a href="{{ site.baseurl }}{{ game.url }}">{% endif %}
             {{ white[0].title }} vs {{ black[0].title }}
-          </a>
+          {% if game.pgn != blank %}</a>{% endif %}
         </td>
         <td>
           {% if gamelink %}
@@ -63,6 +64,13 @@ layout: page
         <td>{{ game.gamedate | date_to_string }}</td>
         <td class="result-cell">
           {{ game.result }}
+        </td>
+        <td class="pgn-link">
+          {% if game.pgn != blank %}
+            <a href="{{ site.baseurl }}{{ game.url }}"><i class="fa fa-fw fa-chess-board"></i></a>
+          {% else %}
+            <i class="fa fa-fw fa-ban no-pgn"></i>
+          {% endif %}
         </td>
       </tr>
     {% endfor %}

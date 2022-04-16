@@ -18,6 +18,7 @@ layout: page
   <thead>
     <th>Board</th>
     <th>Result</th>
+    <th class="pgn-link">PGN?</th>
   </thead>
   <tbody>
     {% for game in games %}
@@ -43,15 +44,22 @@ layout: page
 
       <tr class="{{ result }}">
         <td>
-          <a href="{{ site.baseurl }}{{ game.url }}">
+          {% if game.pgn != blank %}<a href="{{ site.baseurl }}{{ game.url }}">{% endif %}
             #{{ game.boardno }}
             {{ white[0].title }}{% if game.whiterating != blank %} ({{ game.whiterating }}){% endif %}
             vs
             {{ black[0].title }}{% if game.blackrating != blank %} ({{ game.blackrating }}){% endif %}
-          </a>
+          {% if game.pgn != blank %}</a>{% endif %}
         </td>
         <td class="result-cell">
           {{ game.result }}
+        </td>
+        <td class="pgn-link">
+          {% if game.pgn != blank %}
+            <a href="{{ site.baseurl }}{{ game.url }}"><i class="fa fa-fw fa-chess-board"></i></a>
+          {% else %}
+            <i class="fa fa-fw fa-ban no-pgn"></i>
+          {% endif %}
         </td>
       </tr>
     {% endfor %}

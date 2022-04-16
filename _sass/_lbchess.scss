@@ -225,6 +225,16 @@ html {
     }
   }
 
+  .pgn-link {
+    text-align: center;
+    a {
+      color: $bodyColour !important;
+    }
+
+    .no-pgn {
+      color: $disabledColour;
+    }
+  }
 }
 
 dd.result {

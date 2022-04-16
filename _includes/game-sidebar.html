@@ -31,7 +31,7 @@
     <dd><a href="{{ event[0].url }}">{{ event[0].title }}</a></dd>
   {% endif %}
 
-  {% if page.pgn %}
+  {% if page.pgn != blank %}
     <dt>PGN</dt>
     <dd>{{ page.pgn }}</dd>
   {% endif %}
