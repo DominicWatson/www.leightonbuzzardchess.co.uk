@@ -3,16 +3,6 @@ layout: page
 ---
 
 <h2>{{ page.title }}</h2>
-{% if page.captain %}
-  {% assign captain = site.players | where:"slug", page.captain %}
-  <div class="player-profile-header">
-    {% if captain[0].photo %}
-      <img class="player-profile-picture" src="{{ captain[0].photo }}" alt="Profile image of {{ captain[0].title }}">
-    {% endif %}
-    <p>Team Captain: <a href="{{ site.baseurl }}{{ captain[0].url }}">{{ captain[0].title }}</a></li></p>
-  </div>
-
-{% endif  %}
 
 {{ content }}
 
