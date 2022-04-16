@@ -46,6 +46,8 @@ navigation_header:
   url: /
 - title: About
   url: /about/
+- title: Fixtures/Results
+  url: /teams/
 - title: Posts
   url: /blog/
 - title: Find us
