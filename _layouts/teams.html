@@ -9,7 +9,7 @@ layout: page
 {% assign teams = site.teams | where:"lbteam",true %}
 
 {% for team in teams %}
-  <h3><a href="{{ team.url }}">{{ team.title }}</a></h3>
+  <h3><i class="fa fa-fw fa-user-group"></i> <a href="{{ team.url }}">{{ team.title }}</a></h3>
   {% if team.content != blank %}
     {{ team.content }}
 
