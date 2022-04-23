@@ -3,9 +3,9 @@ title: "2022-04-21: David Webber vs Dominic Watson"
 gamedate: 2022-04-21T06:13:31.777Z
 match: beds-division-2-2021-22-ou-home
 boardno: 4
-white: peter-taylor
+white: david-webber
 whiterating: 1300e
-black: paul-endersby
+black: dominic-watson
 blackrating: 1882e
 result: 0-1
 pgn: |
