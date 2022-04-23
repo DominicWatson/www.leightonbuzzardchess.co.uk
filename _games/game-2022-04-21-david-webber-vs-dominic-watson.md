@@ -26,6 +26,6 @@ pgn: |
   35.Kh3 Rxa2 36.Rxe4 fxe4 37.Bb4 a5 38.Bc3 Ra3 39.Bf6 Rxb3 40.e7 Kf7 41.Nd5
   Rb5 42.Nc7 Kxf6 43.Nxe8+ Kxe7 0-1
 ---
-I was pleased with this game. Until putting it through the engine, my favourite moment turned out to be a "blunder" according to Stockfish! I had planned to exploit white's undefended dark squared diagonal and pushed with 15. .. e4??. Looks good and wins the rook. However, kicking out the Knight on c5 is far better with 15... b6. It removes a defender of e5 first as well as removing the threat of Nxb7.
+I was pleased with this game while playing. Until putting it through the engine, my favourite moment turned out to be a "blunder" according to Stockfish! I had planned to exploit white's undefended dark squared diagonal and pushed with 15. .. e4??. Looked good to me and wins the rook for the bishop and a pawn. However, kicking out the Knight on c5 is far better with 15... b6. It removes a defender of e5 first as well as removing the threat of Nxb7. Thankfully my opponent missed his controlling mating pattern threats with dark squared bishop and queen and I survived intact.
 
-Great opportunity to learn to always look for something better when you get excited :)
+I think the lesson is to always look for something better when you're feeling excited and "up".
