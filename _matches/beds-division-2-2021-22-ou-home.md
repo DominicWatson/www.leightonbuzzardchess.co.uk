@@ -6,7 +6,14 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: open-university
 homeaway: Away
-result: TBC
-score: ""
+boards:
+  - brian-valentine
+  - adrian-matthews
+  - peter-taylor
+  - dominic-watson
+  - lee-davies
+result: Win
+score: 5
 scoreavailable: 5
 ---
+Leighton Buzzard B were in the mood for confirming their League 2 champion status with a convincing win against the OU team winning every board. Congratulations to the team on their promotion!
