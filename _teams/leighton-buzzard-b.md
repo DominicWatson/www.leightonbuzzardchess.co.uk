@@ -11,5 +11,7 @@ players:
   - tony-readman
   - dominic-watson
   - lee-davies
+  - david-barker
+  - edward-ted-brown
 ---
 Our B team plays in Bedfordshire League Division 2. See the current season's players and matches, below.
