@@ -6,7 +6,13 @@ season: 2021-22
 hometeam: leighton-buzzard-b
 opponent: bedford-d
 homeaway: Home
-result: TBC
-score: ""
+boards:
+  - kevin-williamson
+  - adrian-matthews
+  - peter-taylor
+  - dominic-watson
+  - lee-davies
+result: Loss
+score: 1
 scoreavailable: 5
 ---
