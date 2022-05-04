@@ -28,8 +28,8 @@ pgn: |
       double threat of Bf6 and Rd5. Rushed b4+ overlooking his King coming 
       back my way.} )
   37...Kc4 38.Rd4+ $4 
-      {I was thinking of simplifying here - overlooking the threat of his 
-      passed pawn and advanced King}
+      {I was thinking of simplifying here - underestimating the threat of 
+      his passed pawn and advanced King}
   38...Kxc3 39.Rxf4 d4 40.Ke2 $4 
       {Sealing my fate - making his passed pawn and advanced King advantage 
       really count. Why not just gobble up his pawns with my Rook?! Was 
