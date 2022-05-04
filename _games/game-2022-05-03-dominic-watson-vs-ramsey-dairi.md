@@ -37,4 +37,4 @@ pgn: |
       stopped and calculated and not rushed.}
   40...d3+ 41.Kd1 Rg8 42.Rc4+ Kxc4 43.Kd2 0-1
 ---
-Today's lesson, don't rush when you've time. We both had time on the clock going into the end game and I started to speed up - some kind of fatherly concern over my 9 year old opponent's bed time?! I thought Ramsey played a really sharp and tight game here, but I should have at least had the draw he offered around move 31.
+Today's lesson, don't rush when you've time. We both had time on the clock going into the end game and I started to speed up - some kind of fatherly concern over my 9 year old opponent's bed time?! Clearly room to improve in spotting the common themes quicker though. I thought Ramsey played a really sharp and tight game here, but I should have at least had the draw he offered around move 31.
